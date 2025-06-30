@@ -1,5 +1,5 @@
 {
-  "name": "integrity-blank",
+  "name": "integrity",
   "version": "1.0.0",
   "description": "A blank template to get started with Payload 3.0",
   "license": "MIT",
@@ -29,6 +29,7 @@
     "next": "15.3.2",
     "payload": "3.44.0",
     "react": "19.1.0",
+    "reading-time": "^1.5.0",
     "sharp": "0.32.6"
   },
   "devDependencies": {
@@ -56,5 +57,11 @@
     "onlyBuiltDependencies": [
       "sharp"
     ]
-  }
+  },
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "keywords": [],
+  "author": ""
 }
