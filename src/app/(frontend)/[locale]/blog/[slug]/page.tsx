@@ -2,11 +2,17 @@ import { getPayload } from 'payload'
 import config from '@/payload.config'
 import PostCard from '@/components/PostCard'
 
-export default async function PostPage({ params }: { params: { slug: string } }) {
+type Props = {
+  params: { slug: string; locale: string }
+}
+
+export default async function PostPage({ params }: Props) {
   const payload = await getPayload({ config: await config })
+  const { slug, locale } = await params; // await!
   const { docs } = await payload.find({
     collection: 'posts',
-    where: { slug: { equals: params.slug } }
+    where: { slug: { equals: slug } },
+    locale: locale as 'en',
   });
   const post = docs[0];
 

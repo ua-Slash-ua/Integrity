@@ -10,21 +10,25 @@ export const Posts: CollectionConfig = {
       {
         name: 'title',
         type: 'text',
+        localized: true,
       },
       {
         name: 'categories',
         type: 'relationship',
         relationTo: 'categories',
         hasMany: true,
+        localized: true,
       },
       {
         name: 'featuredImage',
         type: 'upload',
         relationTo: 'media',
+        localized: true,
       },
       {
         name: 'content',
         type: 'richText',
+        localized: true,
       },
       {
         name: 'readingTime',

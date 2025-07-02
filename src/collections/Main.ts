@@ -10,12 +10,14 @@ export const MainInfo: GlobalConfig = {
             {
                 name: 'phone',
                 type: 'text',
-                label: 'Phone number'
+                label: 'Phone number',
+                localized: true,
             },
             {
                 name: 'email',
                 type: 'text',
-                label: 'E-mail'
+                label: 'E-mail',
+                localized: true,
             }
         ]
     },
@@ -26,29 +28,34 @@ export const MainInfo: GlobalConfig = {
             {
                 name: 'whatsapp',
                 type: 'text',
-                label: 'whatsapp'
+                label: 'whatsapp',
+                localized: true,
             },
             {
                 name: 'telegram',
                 type: 'text',
-                label: 'Telegram'
+                label: 'Telegram',
+                localized: true,
             },
             {
                 name: 'youtube',
                 type: 'text',
-                label: 'YouTube'
+                label: 'YouTube',
+                localized: true,
             },
         ]
     },
     {
         name: 'button',
         type: "text",
-        label: 'Button Text'
+        label: 'Button Text',
+        localized: true,
     },
     {
         name: 'logo',
         type: 'code',
-        label: 'SVG logo'
+        label: 'SVG logo',
+        localized: true,
     }
   ],
 };

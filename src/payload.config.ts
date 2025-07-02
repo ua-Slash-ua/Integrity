@@ -1,5 +1,6 @@
 // storage-adapter-import-placeholder
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
+import { seoPlugin } from '@payloadcms/plugin-seo';
 import { payloadCloudPlugin } from '@payloadcms/payload-cloud'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import path from 'path'
@@ -12,6 +13,8 @@ import { Media } from './collections/Media'
 import { Posts } from './collections/Posts'
 import { CategoriesPosts } from './collections/CategoriesPosts'
 import { MainInfo } from './collections/Main'
+import { Pages } from './collections/Pages'
+
 
 
 const filename = fileURLToPath(import.meta.url)
@@ -31,7 +34,22 @@ export default buildConfig({
     Media,
     Posts,
     CategoriesPosts,
+    Pages,
   ],
+  localization: {
+    locales: [
+      {
+        label: 'English',
+        code: 'en',
+      },
+      {
+        label: 'Ukrainian',
+        code: 'ua',
+      },
+    ],
+    defaultLocale: 'en',
+    fallback: true,
+  },
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
@@ -43,6 +61,16 @@ export default buildConfig({
   sharp,
   plugins: [
     payloadCloudPlugin(),
-    // storage-adapter-placeholder
+    seoPlugin({
+      collections: [
+        'pages',
+        'posts'
+      ],
+      uploadsCollection: 'media',
+      generateTitle: ({ doc }) => `${doc.title} — INTEGRITY`,
+      generateDescription: ({ doc }) => doc.description,
+      generateURL: ({doc, collectionSlug}) => `https://integrity.com/${collectionSlug}/${doc.slug}`,
+      tabbedUI: true
+    })
   ],
 })

@@ -9,15 +9,18 @@ export const CategoriesPosts: CollectionConfig = {
     {
         name: 'title',
         type: 'text',
+        localized: true,
     },
     {
         name: 'icon',
         type: 'upload',
         relationTo: 'media',
+        localized: true,
     },
     {
         name: 'description',
         type: 'text',
+        localized: true,
     },
     {
         name: 'posts',
