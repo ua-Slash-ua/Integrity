@@ -96,9 +96,11 @@ export interface Config {
   };
   globals: {
     main: Main;
+    menu: Menu;
   };
   globalsSelect: {
     main: MainSelect<false> | MainSelect<true>;
+    menu: MenuSelect<false> | MenuSelect<true>;
   };
   locale: 'en' | 'ua';
   user: User & {
@@ -233,6 +235,38 @@ export interface Page {
   slug: string;
   title: string;
   description?: string | null;
+  blocks?:
+    | (
+        | {
+            enabled?: boolean | null;
+            subtitle?: string | null;
+            title?: string | null;
+            description?: string | null;
+            'first-button'?: string | null;
+            'last-button'?: string | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'hero-block';
+          }
+        | {
+            enabled?: boolean | null;
+            subtitle?: string | null;
+            title?: string | null;
+            cards?:
+              | {
+                  icon?: (string | null) | Media;
+                  'icon-text'?: string | null;
+                  title?: string | null;
+                  description?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'achievements-block';
+          }
+      )[]
+    | null;
   meta?: {
     title?: string | null;
     description?: string | null;
@@ -394,6 +428,40 @@ export interface PagesSelect<T extends boolean = true> {
   slug?: T;
   title?: T;
   description?: T;
+  blocks?:
+    | T
+    | {
+        'hero-block'?:
+          | T
+          | {
+              enabled?: T;
+              subtitle?: T;
+              title?: T;
+              description?: T;
+              'first-button'?: T;
+              'last-button'?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'achievements-block'?:
+          | T
+          | {
+              enabled?: T;
+              subtitle?: T;
+              title?: T;
+              cards?:
+                | T
+                | {
+                    icon?: T;
+                    'icon-text'?: T;
+                    title?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+      };
   meta?:
     | T
     | {
@@ -458,6 +526,29 @@ export interface Main {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "menu".
+ */
+export interface Menu {
+  id: string;
+  'header-menu'?:
+    | {
+        label: string;
+        link: string;
+        id?: string | null;
+      }[]
+    | null;
+  'footer-menu'?:
+    | {
+        label: string;
+        link: string;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "main_select".
  */
 export interface MainSelect<T extends boolean = true> {
@@ -476,6 +567,29 @@ export interface MainSelect<T extends boolean = true> {
       };
   button?: T;
   logo?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "menu_select".
+ */
+export interface MenuSelect<T extends boolean = true> {
+  'header-menu'?:
+    | T
+    | {
+        label?: T;
+        link?: T;
+        id?: T;
+      };
+  'footer-menu'?:
+    | T
+    | {
+        label?: T;
+        link?: T;
+        id?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

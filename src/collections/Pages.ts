@@ -1,3 +1,5 @@
+import { HeroBlock } from '@/blocks/HeroBlock';
+import { AchievementsBlock } from '@/blocks/AchievementsBlock';
 import type { CollectionConfig } from 'payload'
 
 export const Pages: CollectionConfig = {
@@ -34,8 +36,15 @@ export const Pages: CollectionConfig = {
         name: 'description',
         type: 'text',
         localized: true,
+      },
+      {
+        type: 'blocks',
+        name: 'blocks',
+        blocks: [
+          HeroBlock,
+          AchievementsBlock
+        ],
       }
     ],
     
 }
-

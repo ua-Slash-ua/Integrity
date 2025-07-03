@@ -13,6 +13,7 @@ import { Media } from './collections/Media'
 import { Posts } from './collections/Posts'
 import { CategoriesPosts } from './collections/CategoriesPosts'
 import { MainInfo } from './collections/Main'
+import { Menu } from './collections/Menu'
 import { Pages } from './collections/Pages'
 
 
@@ -26,8 +27,16 @@ export default buildConfig({
     importMap: {
       baseDir: path.resolve(dirname),
     },
+    livePreview: {
+      url: ({ data, collectionConfig }) => {
+        const localePrefix = data?.locale ? `/${data.locale}` : '';
+        const slug = collectionConfig?.slug || '';
+        return `http://localhost:3000${localePrefix}/${slug}`;
+      },
+      collections: ['pages'],
+    },
   },
-  globals: [MainInfo],
+  globals: [MainInfo, Menu],
   collections: 
   [
     Users, 
