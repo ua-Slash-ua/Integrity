@@ -87,10 +87,12 @@ export interface Config {
   globals: {
     contacts: Contact;
     menus: Menu;
+    achievements: Achievement;
   };
   globalsSelect: {
     contacts: ContactsSelect<false> | ContactsSelect<true>;
     menus: MenusSelect<false> | MenusSelect<true>;
+    achievements: AchievementsSelect<false> | AchievementsSelect<true>;
   };
   locale: 'en' | 'uk';
   user: User & {
@@ -327,6 +329,36 @@ export interface Menu {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "achievements".
+ */
+export interface Achievement {
+  id: string;
+  blocks?:
+    | {
+        title: string;
+        /**
+         * Paste raw SVG code here
+         */
+        svgIcon?: string | null;
+        bigText?: string | null;
+        context?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Має бути рівно 4 іконки. Можна змінювати порядок.
+   */
+  icons?:
+    | {
+        svg: string;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "contacts_select".
  */
 export interface ContactsSelect<T extends boolean = true> {
@@ -353,6 +385,30 @@ export interface MenusSelect<T extends boolean = true> {
     | {
         label?: T;
         url?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "achievements_select".
+ */
+export interface AchievementsSelect<T extends boolean = true> {
+  blocks?:
+    | T
+    | {
+        title?: T;
+        svgIcon?: T;
+        bigText?: T;
+        context?: T;
+        id?: T;
+      };
+  icons?:
+    | T
+    | {
+        svg?: T;
         id?: T;
       };
   updatedAt?: T;
