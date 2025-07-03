@@ -85,12 +85,14 @@ export interface Config {
     defaultIDType: string;
   };
   globals: {
-    'contact-info': ContactInfo;
+    contacts: Contact;
+    menus: Menu;
   };
   globalsSelect: {
-    'contact-info': ContactInfoSelect<false> | ContactInfoSelect<true>;
+    contacts: ContactsSelect<false> | ContactsSelect<true>;
+    menus: MenusSelect<false> | MenusSelect<true>;
   };
-  locale: null;
+  locale: 'en' | 'uk';
   user: User & {
     collection: 'users';
   };
@@ -291,28 +293,68 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "contact-info".
+ * via the `definition` "contacts".
  */
-export interface ContactInfo {
+export interface Contact {
   id: string;
   email: string;
-  phone?: string | null;
-  address?: string | null;
-  facebook?: string | null;
-  telegram?: string | null;
+  phone: string;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "contact-info_select".
+ * via the `definition` "menus".
  */
-export interface ContactInfoSelect<T extends boolean = true> {
+export interface Menu {
+  id: string;
+  mainMenuItems?:
+    | {
+        label: string;
+        url: string;
+        id?: string | null;
+      }[]
+    | null;
+  footerMenuItems?:
+    | {
+        label: string;
+        url: string;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contacts_select".
+ */
+export interface ContactsSelect<T extends boolean = true> {
   email?: T;
   phone?: T;
-  address?: T;
-  facebook?: T;
-  telegram?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "menus_select".
+ */
+export interface MenusSelect<T extends boolean = true> {
+  mainMenuItems?:
+    | T
+    | {
+        label?: T;
+        url?: T;
+        id?: T;
+      };
+  footerMenuItems?:
+    | T
+    | {
+        label?: T;
+        url?: T;
+        id?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

@@ -9,7 +9,8 @@ import sharp from 'sharp'
 
 import {Users} from './collections/Users'
 import {Media} from './collections/Media'
-import Contact from "@/app/globals/Contacts";
+import {Contacts} from "@/globals/Contacts";
+import {Menus} from "@/collections/Menus";
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -21,13 +22,28 @@ export default buildConfig({
             baseDir: path.resolve(dirname),
         },
     },
+    localization: {
+        locales: [
+            {
+                label: 'English',
+                code: 'en'
+            },
+            {
+                label: 'Ukraine',
+                code: 'uk'
+            }],
+        defaultLocale: 'en',
+        fallback: true,
+    },
+
     collections: [
         Users,
-        Media,
+        Media
+
     ],
     globals: [
-        Contact,
-        // інші глобальні налаштування
+        Contacts,
+        Menus
     ],
     editor: lexicalEditor(),
     secret: process.env.PAYLOAD_SECRET || '',
