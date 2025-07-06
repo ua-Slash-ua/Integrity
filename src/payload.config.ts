@@ -15,6 +15,7 @@ import {Cases} from "@/collections/Cases";
 import {Services} from "@/collections/Services";
 import {Achievements} from "@/collections/Achievements";
 import {Reviews} from "@/collections/Reviews";
+import {Tariffs} from "@/collections/Tariffs";
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -47,6 +48,7 @@ export default buildConfig({
         Services,
         Achievements,
         Reviews,
+        Tariffs,
     ],
     globals: [
         Contacts,

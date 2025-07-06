@@ -73,6 +73,7 @@ export interface Config {
     services: Service;
     achievements: Achievement;
     reviews: Review;
+    tariffs: Tariff;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -85,6 +86,7 @@ export interface Config {
     services: ServicesSelect<false> | ServicesSelect<true>;
     achievements: AchievementsSelect<false> | AchievementsSelect<true>;
     reviews: ReviewsSelect<false> | ReviewsSelect<true>;
+    tariffs: TariffsSelect<false> | TariffsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -249,6 +251,24 @@ export interface Review {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tariffs".
+ */
+export interface Tariff {
+  id: string;
+  tariff: string;
+  title: string;
+  description: string;
+  result?:
+    | {
+        point?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -277,6 +297,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'reviews';
         value: string | Review;
+      } | null)
+    | ({
+        relationTo: 'tariffs';
+        value: string | Tariff;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -410,6 +434,23 @@ export interface ReviewsSelect<T extends boolean = true> {
   review_content?: T;
   rating?: T;
   client_photo?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "tariffs_select".
+ */
+export interface TariffsSelect<T extends boolean = true> {
+  tariff?: T;
+  title?: T;
+  description?: T;
+  result?:
+    | T
+    | {
+        point?: T;
+        id?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }
