@@ -87,12 +87,12 @@ export interface Config {
   globals: {
     contacts: Contact;
     menus: Menu;
-    achievements: Achievement;
+    main_page: MainPage;
   };
   globalsSelect: {
     contacts: ContactsSelect<false> | ContactsSelect<true>;
     menus: MenusSelect<false> | MenusSelect<true>;
-    achievements: AchievementsSelect<false> | AchievementsSelect<true>;
+    main_page: MainPageSelect<false> | MainPageSelect<true>;
   };
   locale: 'en' | 'uk';
   user: User & {
@@ -329,10 +329,13 @@ export interface Menu {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "achievements".
+ * via the `definition` "main_page".
  */
-export interface Achievement {
+export interface MainPage {
   id: string;
+  include?: boolean | null;
+  block_name?: string | null;
+  title?: string | null;
   blocks?:
     | {
         title: string;
@@ -345,12 +348,9 @@ export interface Achievement {
         id?: string | null;
       }[]
     | null;
-  /**
-   * Має бути рівно 4 іконки. Можна змінювати порядок.
-   */
   icons?:
     | {
-        svg: string;
+        svg?: string | null;
         id?: string | null;
       }[]
     | null;
@@ -393,9 +393,12 @@ export interface MenusSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "achievements_select".
+ * via the `definition` "main_page_select".
  */
-export interface AchievementsSelect<T extends boolean = true> {
+export interface MainPageSelect<T extends boolean = true> {
+  include?: T;
+  block_name?: T;
+  title?: T;
   blocks?:
     | T
     | {
