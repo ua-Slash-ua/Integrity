@@ -70,6 +70,9 @@ export interface Config {
     users: User;
     media: Media;
     cases: Case;
+    services: Service;
+    achievements: Achievement;
+    reviews: Review;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -79,6 +82,9 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     cases: CasesSelect<false> | CasesSelect<true>;
+    services: ServicesSelect<false> | ServicesSelect<true>;
+    achievements: AchievementsSelect<false> | AchievementsSelect<true>;
+    reviews: ReviewsSelect<false> | ReviewsSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -89,12 +95,10 @@ export interface Config {
   globals: {
     contacts: Contact;
     menus: Menu;
-    main_page: MainPage;
   };
   globalsSelect: {
     contacts: ContactsSelect<false> | ContactsSelect<true>;
     menus: MenusSelect<false> | MenusSelect<true>;
-    main_page: MainPageSelect<false> | MainPageSelect<true>;
   };
   locale: 'en' | 'uk';
   user: User & {
@@ -198,6 +202,53 @@ export interface Case {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "services".
+ */
+export interface Service {
+  id: string;
+  icon?: string | null;
+  title?: string | null;
+  description?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "achievements".
+ */
+export interface Achievement {
+  id: string;
+  title: string;
+  /**
+   * Paste raw SVG code here
+   */
+  svgIcon?: string | null;
+  bigText?: string | null;
+  context?: string | null;
+  /**
+   * Paste raw SVG code here
+   */
+  svgIcon_second?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "reviews".
+ */
+export interface Review {
+  id: string;
+  full_name: string;
+  location: string;
+  quote: string;
+  review_content: string;
+  rating: string;
+  client_photo: string | Media;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -214,6 +265,18 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'cases';
         value: string | Case;
+      } | null)
+    | ({
+        relationTo: 'services';
+        value: string | Service;
+      } | null)
+    | ({
+        relationTo: 'achievements';
+        value: string | Achievement;
+      } | null)
+    | ({
+        relationTo: 'reviews';
+        value: string | Review;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -314,6 +377,44 @@ export interface CasesSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "services_select".
+ */
+export interface ServicesSelect<T extends boolean = true> {
+  icon?: T;
+  title?: T;
+  description?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "achievements_select".
+ */
+export interface AchievementsSelect<T extends boolean = true> {
+  title?: T;
+  svgIcon?: T;
+  bigText?: T;
+  context?: T;
+  svgIcon_second?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "reviews_select".
+ */
+export interface ReviewsSelect<T extends boolean = true> {
+  full_name?: T;
+  location?: T;
+  quote?: T;
+  review_content?: T;
+  rating?: T;
+  client_photo?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents_select".
  */
 export interface PayloadLockedDocumentsSelect<T extends boolean = true> {
@@ -380,36 +481,6 @@ export interface Menu {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "main_page".
- */
-export interface MainPage {
-  id: string;
-  include?: boolean | null;
-  block_name?: string | null;
-  title?: string | null;
-  blocks?:
-    | {
-        title: string;
-        /**
-         * Paste raw SVG code here
-         */
-        svgIcon?: string | null;
-        bigText?: string | null;
-        context?: string | null;
-        id?: string | null;
-      }[]
-    | null;
-  icons?:
-    | {
-        svg?: string | null;
-        id?: string | null;
-      }[]
-    | null;
-  updatedAt?: string | null;
-  createdAt?: string | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "contacts_select".
  */
 export interface ContactsSelect<T extends boolean = true> {
@@ -436,33 +507,6 @@ export interface MenusSelect<T extends boolean = true> {
     | {
         label?: T;
         url?: T;
-        id?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
-  globalType?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "main_page_select".
- */
-export interface MainPageSelect<T extends boolean = true> {
-  include?: T;
-  block_name?: T;
-  title?: T;
-  blocks?:
-    | T
-    | {
-        title?: T;
-        svgIcon?: T;
-        bigText?: T;
-        context?: T;
-        id?: T;
-      };
-  icons?:
-    | T
-    | {
-        svg?: T;
         id?: T;
       };
   updatedAt?: T;

@@ -11,8 +11,10 @@ import {Users} from './collections/Users'
 import {Media} from './collections/Media'
 import {Contacts} from "@/globals/Contacts";
 import {Menus} from "@/globals/Menus";
-import {MainPage} from "@/globals/MainPage";
 import {Cases} from "@/collections/Cases";
+import {Services} from "@/collections/Services";
+import {Achievements} from "@/collections/Achievements";
+import {Reviews} from "@/collections/Reviews";
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -42,12 +44,13 @@ export default buildConfig({
         Users,
         Media,
         Cases,
-
+        Services,
+        Achievements,
+        Reviews,
     ],
     globals: [
         Contacts,
         Menus,
-        MainPage,
     ],
     editor: lexicalEditor(),
     secret: process.env.PAYLOAD_SECRET || '',
