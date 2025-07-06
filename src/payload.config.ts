@@ -12,6 +12,7 @@ import {Media} from './collections/Media'
 import {Contacts} from "@/globals/Contacts";
 import {Menus} from "@/globals/Menus";
 import {MainPage} from "@/globals/MainPage";
+import {Cases} from "@/collections/Cases";
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -39,7 +40,8 @@ export default buildConfig({
 
     collections: [
         Users,
-        Media
+        Media,
+        Cases,
 
     ],
     globals: [
