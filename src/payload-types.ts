@@ -368,6 +368,26 @@ export interface Page {
             blockName?: string | null;
             blockType: 'reviews-block';
           }
+        | {
+            enabled?: boolean | null;
+            subtitle: string;
+            title: string;
+            tariff?:
+              | {
+                  name_tariff: string;
+                  title: string;
+                  description: string;
+                  result: {
+                    points: string;
+                    id?: string | null;
+                  }[];
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'tariffs-block';
+          }
       )[]
     | null;
   meta?: {
@@ -672,6 +692,29 @@ export interface PagesSelect<T extends boolean = true> {
                     client_image?: T;
                     quote?: T;
                     review_content?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'tariffs-block'?:
+          | T
+          | {
+              enabled?: T;
+              subtitle?: T;
+              title?: T;
+              tariff?:
+                | T
+                | {
+                    name_tariff?: T;
+                    title?: T;
+                    description?: T;
+                    result?:
+                      | T
+                      | {
+                          points?: T;
+                          id?: T;
+                        };
                     id?: T;
                   };
               id?: T;
