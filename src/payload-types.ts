@@ -265,6 +265,109 @@ export interface Page {
             blockName?: string | null;
             blockType: 'achievements-block';
           }
+        | {
+            enabled?: boolean | null;
+            subtitle?: string | null;
+            title?: string | null;
+            case?:
+              | {
+                  case_title?: string | null;
+                  case_location?: string | null;
+                  case_client_website?: string | null;
+                  case_client?: string | null;
+                  case_goal?: string | null;
+                  case_time?: string | null;
+                  case_wwd?:
+                    | {
+                        point?: string | null;
+                        id?: string | null;
+                      }[]
+                    | null;
+                  case_image?: (string | null) | Media;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'cases-block';
+          }
+        | {
+            enabled?: boolean | null;
+            subtitle?: string | null;
+            title?: string | null;
+            service?:
+              | {
+                  service_title?: string | null;
+                  service_description?: string | null;
+                  service_icon?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'services-block';
+          }
+        | {
+            enabled?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'order-call-block';
+          }
+        | {
+            enabled?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'what-us-block';
+          }
+        | {
+            enabled?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'expertise-block';
+          }
+        | {
+            enabled?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'workflow-block';
+          }
+        | {
+            enabled?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'outcomes-block';
+          }
+        | {
+            enabled?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'about-founder-block';
+          }
+        | {
+            enabled?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'our-team-block';
+          }
+        | {
+            enabled?: boolean | null;
+            subtitle?: string | null;
+            title?: string | null;
+            review?:
+              | {
+                  rating?: string | null;
+                  client_name?: string | null;
+                  location?: string | null;
+                  client_image?: (string | null) | Media;
+                  quote?: string | null;
+                  review_content?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'reviews-block';
+          }
       )[]
     | null;
   meta?: {
@@ -456,6 +559,119 @@ export interface PagesSelect<T extends boolean = true> {
                     label?: T;
                     title?: T;
                     description?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'cases-block'?:
+          | T
+          | {
+              enabled?: T;
+              subtitle?: T;
+              title?: T;
+              case?:
+                | T
+                | {
+                    case_title?: T;
+                    case_location?: T;
+                    case_client_website?: T;
+                    case_client?: T;
+                    case_goal?: T;
+                    case_time?: T;
+                    case_wwd?:
+                      | T
+                      | {
+                          point?: T;
+                          id?: T;
+                        };
+                    case_image?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'services-block'?:
+          | T
+          | {
+              enabled?: T;
+              subtitle?: T;
+              title?: T;
+              service?:
+                | T
+                | {
+                    service_title?: T;
+                    service_description?: T;
+                    service_icon?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'order-call-block'?:
+          | T
+          | {
+              enabled?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'what-us-block'?:
+          | T
+          | {
+              enabled?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'expertise-block'?:
+          | T
+          | {
+              enabled?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'workflow-block'?:
+          | T
+          | {
+              enabled?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'outcomes-block'?:
+          | T
+          | {
+              enabled?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'about-founder-block'?:
+          | T
+          | {
+              enabled?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'our-team-block'?:
+          | T
+          | {
+              enabled?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'reviews-block'?:
+          | T
+          | {
+              enabled?: T;
+              subtitle?: T;
+              title?: T;
+              review?:
+                | T
+                | {
+                    rating?: T;
+                    client_name?: T;
+                    location?: T;
+                    client_image?: T;
+                    quote?: T;
+                    review_content?: T;
                     id?: T;
                   };
               id?: T;
