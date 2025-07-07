@@ -1,6 +1,7 @@
 import { HeroBlock } from '@/blocks/HeroBlock';
 import { AchievementsBlock } from '@/blocks/AchievementsBlock';
 import type { CollectionConfig } from 'payload'
+import { CasesBlock } from '@/blocks/CasesBlock'
 
 export const Pages: CollectionConfig = {
     slug: 'pages',
@@ -42,7 +43,8 @@ export const Pages: CollectionConfig = {
         name: 'blocks',
         blocks: [
           HeroBlock,
-          AchievementsBlock
+          AchievementsBlock,
+          CasesBlock,
         ],
       }
     ],
