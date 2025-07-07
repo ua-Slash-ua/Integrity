@@ -239,8 +239,8 @@ export interface Page {
     | (
         | {
             enabled?: boolean | null;
-            subtitle?: string | null;
-            title?: string | null;
+            subtitle: string;
+            title: string;
             description?: string | null;
             firstButton?: string | null;
             lastButton?: string | null;
@@ -267,8 +267,8 @@ export interface Page {
           }
         | {
             enabled?: boolean | null;
-            subtitle?: string | null;
-            title?: string | null;
+            subtitle: string;
+            title: string;
             case?:
               | {
                   case_title?: string | null;
@@ -293,8 +293,8 @@ export interface Page {
           }
         | {
             enabled?: boolean | null;
-            subtitle?: string | null;
-            title?: string | null;
+            subtitle: string;
+            title: string;
             service?:
               | {
                   service_title?: string | null;
@@ -315,44 +315,56 @@ export interface Page {
           }
         | {
             enabled?: boolean | null;
+            subtitle: string;
+            title: string;
             id?: string | null;
             blockName?: string | null;
             blockType: 'what-us-block';
           }
         | {
             enabled?: boolean | null;
+            subtitle: string;
+            title: string;
             id?: string | null;
             blockName?: string | null;
             blockType: 'expertise-block';
           }
         | {
             enabled?: boolean | null;
+            subtitle: string;
+            title: string;
             id?: string | null;
             blockName?: string | null;
             blockType: 'workflow-block';
           }
         | {
             enabled?: boolean | null;
+            subtitle: string;
+            title: string;
             id?: string | null;
             blockName?: string | null;
             blockType: 'outcomes-block';
           }
         | {
             enabled?: boolean | null;
+            subtitle: string;
+            title: string;
             id?: string | null;
             blockName?: string | null;
             blockType: 'about-founder-block';
           }
         | {
             enabled?: boolean | null;
+            subtitle: string;
+            title: string;
             id?: string | null;
             blockName?: string | null;
             blockType: 'our-team-block';
           }
         | {
             enabled?: boolean | null;
-            subtitle?: string | null;
-            title?: string | null;
+            subtitle: string;
+            title: string;
             review?:
               | {
                   rating?: string | null;
@@ -387,6 +399,14 @@ export interface Page {
             id?: string | null;
             blockName?: string | null;
             blockType: 'tariffs-block';
+          }
+        | {
+            enabled?: boolean | null;
+            subtitle: string;
+            title: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'articles-block';
           }
       )[]
     | null;
@@ -639,6 +659,8 @@ export interface PagesSelect<T extends boolean = true> {
           | T
           | {
               enabled?: T;
+              subtitle?: T;
+              title?: T;
               id?: T;
               blockName?: T;
             };
@@ -646,6 +668,8 @@ export interface PagesSelect<T extends boolean = true> {
           | T
           | {
               enabled?: T;
+              subtitle?: T;
+              title?: T;
               id?: T;
               blockName?: T;
             };
@@ -653,6 +677,8 @@ export interface PagesSelect<T extends boolean = true> {
           | T
           | {
               enabled?: T;
+              subtitle?: T;
+              title?: T;
               id?: T;
               blockName?: T;
             };
@@ -660,6 +686,8 @@ export interface PagesSelect<T extends boolean = true> {
           | T
           | {
               enabled?: T;
+              subtitle?: T;
+              title?: T;
               id?: T;
               blockName?: T;
             };
@@ -667,6 +695,8 @@ export interface PagesSelect<T extends boolean = true> {
           | T
           | {
               enabled?: T;
+              subtitle?: T;
+              title?: T;
               id?: T;
               blockName?: T;
             };
@@ -674,6 +704,8 @@ export interface PagesSelect<T extends boolean = true> {
           | T
           | {
               enabled?: T;
+              subtitle?: T;
+              title?: T;
               id?: T;
               blockName?: T;
             };
@@ -717,6 +749,15 @@ export interface PagesSelect<T extends boolean = true> {
                         };
                     id?: T;
                   };
+              id?: T;
+              blockName?: T;
+            };
+        'articles-block'?:
+          | T
+          | {
+              enabled?: T;
+              subtitle?: T;
+              title?: T;
               id?: T;
               blockName?: T;
             };
