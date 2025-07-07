@@ -291,6 +291,22 @@ export interface Page {
             blockName?: string | null;
             blockType: 'cases-block';
           }
+        | {
+            enabled?: boolean | null;
+            subtitle?: string | null;
+            title?: string | null;
+            service?:
+              | {
+                  service_title?: string | null;
+                  service_description?: string | null;
+                  service_icon?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'services-block';
+          }
       )[]
     | null;
   meta?: {
@@ -509,6 +525,23 @@ export interface PagesSelect<T extends boolean = true> {
                           id?: T;
                         };
                     case_image?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'services-block'?:
+          | T
+          | {
+              enabled?: T;
+              subtitle?: T;
+              title?: T;
+              service?:
+                | T
+                | {
+                    service_title?: T;
+                    service_description?: T;
+                    service_icon?: T;
                     id?: T;
                   };
               id?: T;
