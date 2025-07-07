@@ -4,6 +4,13 @@ import type { CollectionConfig } from 'payload'
 import { CasesBlock } from '@/blocks/CasesBlock'
 import { ServicesBlock } from '@/blocks/ServicesBlock'
 import { OrderCallBlock } from '@/blocks/OrderCallBlock'
+import { WhatUsBlock } from '@/blocks/WhatUsBlock'
+import { ExpertiseBlock } from '@/blocks/ExpertiseBlock'
+import { WorkflowBlock } from '@/blocks/WorkflowBlock'
+import { OutcomesBlock } from '@/blocks/OutcomesBlock'
+import { AboutFounderBlock } from '@/blocks/AboutFounderBlock'
+import { OurTeamBlock } from '@/blocks/OurTeamBlock'
+import { ReviewsBlock } from '@/blocks/ReviewsBlock'
 
 export const Pages: CollectionConfig = {
     slug: 'pages',
@@ -49,6 +56,13 @@ export const Pages: CollectionConfig = {
           CasesBlock,
           ServicesBlock,
           OrderCallBlock,
+          WhatUsBlock,
+          ExpertiseBlock,
+          WorkflowBlock,
+          OutcomesBlock,
+          AboutFounderBlock,
+          OurTeamBlock,
+          ReviewsBlock,
         ],
       }
     ],

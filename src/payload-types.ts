@@ -313,6 +313,61 @@ export interface Page {
             blockName?: string | null;
             blockType: 'order-call-block';
           }
+        | {
+            enabled?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'what-us-block';
+          }
+        | {
+            enabled?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'expertise-block';
+          }
+        | {
+            enabled?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'workflow-block';
+          }
+        | {
+            enabled?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'outcomes-block';
+          }
+        | {
+            enabled?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'about-founder-block';
+          }
+        | {
+            enabled?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'our-team-block';
+          }
+        | {
+            enabled?: boolean | null;
+            subtitle?: string | null;
+            title?: string | null;
+            review?:
+              | {
+                  rating?: string | null;
+                  client_name?: string | null;
+                  location?: string | null;
+                  client_image?: (string | null) | Media;
+                  quote?: string | null;
+                  review_content?: string | null;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'reviews-block';
+          }
       )[]
     | null;
   meta?: {
@@ -557,6 +612,68 @@ export interface PagesSelect<T extends boolean = true> {
           | T
           | {
               enabled?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'what-us-block'?:
+          | T
+          | {
+              enabled?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'expertise-block'?:
+          | T
+          | {
+              enabled?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'workflow-block'?:
+          | T
+          | {
+              enabled?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'outcomes-block'?:
+          | T
+          | {
+              enabled?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'about-founder-block'?:
+          | T
+          | {
+              enabled?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'our-team-block'?:
+          | T
+          | {
+              enabled?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'reviews-block'?:
+          | T
+          | {
+              enabled?: T;
+              subtitle?: T;
+              title?: T;
+              review?:
+                | T
+                | {
+                    rating?: T;
+                    client_name?: T;
+                    location?: T;
+                    client_image?: T;
+                    quote?: T;
+                    review_content?: T;
+                    id?: T;
+                  };
               id?: T;
               blockName?: T;
             };

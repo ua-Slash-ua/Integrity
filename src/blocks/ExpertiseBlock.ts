@@ -1,6 +1,6 @@
 import type { Block } from 'payload'
 
-export const Expertise: Block = {
+export const ExpertiseBlock: Block = {
   slug: 'expertise-block',
   fields: [
     {
