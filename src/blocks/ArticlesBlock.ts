@@ -1,7 +1,7 @@
 import type { Block } from 'payload'
 
-export const WhatUsBlock: Block = {
-  slug: 'what-us-block',
+export const ArticlesBlock: Block = {
+  slug: 'articles-block',
   fields: [
     {
       name: 'enabled',
@@ -14,7 +14,7 @@ export const WhatUsBlock: Block = {
       name: 'subtitle',
       type: 'text',
       required: true,
-      localized: true,
+      localized:true,
       label: {
         en: 'Subtitle',
       },
@@ -23,7 +23,7 @@ export const WhatUsBlock: Block = {
       name: 'title',
       type: 'text',
       required: true,
-      localized: true,
+      localized:true,
       label: {
         en: 'Title',
       },

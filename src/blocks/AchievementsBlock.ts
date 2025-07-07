@@ -13,12 +13,20 @@ export const AchievementsBlock: Block = {
     {
       name: 'subtitle',
       type: 'text',
+      required: true,
       localized: true,
+      label: {
+        en: 'Subtitle',
+      },
     },
     {
       name: 'title',
       type: 'text',
+      required: true,
       localized: true,
+      label: {
+        en: 'Title',
+      },
     },
     {
       type: 'array',
