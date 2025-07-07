@@ -307,6 +307,12 @@ export interface Page {
             blockName?: string | null;
             blockType: 'services-block';
           }
+        | {
+            enabled?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'order-call-block';
+          }
       )[]
     | null;
   meta?: {
@@ -544,6 +550,13 @@ export interface PagesSelect<T extends boolean = true> {
                     service_icon?: T;
                     id?: T;
                   };
+              id?: T;
+              blockName?: T;
+            };
+        'order-call-block'?:
+          | T
+          | {
+              enabled?: T;
               id?: T;
               blockName?: T;
             };

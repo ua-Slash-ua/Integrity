@@ -3,6 +3,7 @@ import { AchievementsBlock } from '@/blocks/AchievementsBlock';
 import type { CollectionConfig } from 'payload'
 import { CasesBlock } from '@/blocks/CasesBlock'
 import { ServicesBlock } from '@/blocks/ServicesBlock'
+import { OrderCallBlock } from '@/blocks/OrderCallBlock'
 
 export const Pages: CollectionConfig = {
     slug: 'pages',
@@ -47,6 +48,7 @@ export const Pages: CollectionConfig = {
           AchievementsBlock,
           CasesBlock,
           ServicesBlock,
+          OrderCallBlock,
         ],
       }
     ],
