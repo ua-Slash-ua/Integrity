@@ -1,14 +1,23 @@
 .section{
     width: 100vw;
-    height: 95vh;
+    height: 56vw;
+    padding-top: 9.48vw;
     border-radius: 0 0 2.08vw 2.08vw;
     background: var(--Black, #222);
     color: #fff;
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    position: relative;
 
+    
+    .heroWrap{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5vw
+    }
     .subtitle{
         display: flex;
         padding: 0.41vw 1.25vw;
@@ -17,7 +26,7 @@
         gap: 0.52vw;
         border-radius: 2.08vw;
         background: rgba(255, 255, 255, 0.10);
-        margin-bottom: 2.9vw;
+        margin-bottom: 0.4vw;
 
         span{
             text-align: center;
@@ -48,4 +57,101 @@
         -webkit-text-fill-color: transparent;
         max-width: 48vw;
     }
+    p{
+        color: var(--Light-garay-2, #B5B5B5);
+        text-align: center;
+        font-family: Mont;
+        font-size: 1.04vw;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 140%; /* 1.45833rem */
+        letter-spacing: -0.03125rem;
+        width: 32vw;
+
+        span{
+            color: var(--White, #FFF);
+        }
+    }
+    .wrapButtons{
+        display: flex;
+        align-items: center;
+        gap: 0.83vw;
+        font-family: Mont;
+        font-size: 0.83vw;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 100%;
+
+        svg{
+            width: 1.04vw;
+        }
+
+        .firstButton{
+            display: flex;
+            padding: 1.25vw 2.0vw;
+            justify-content: center;
+            align-items: center;
+            gap: 0.41vw;
+            border-radius: 0.83vw;
+            border: 0.05vw solid var(--White, #FFF);
+            color: var(--White, #FFF);
+        }
+        .lastButton{
+            display: flex;
+            padding: 1.25vw 2.0vw;
+            justify-content: center;
+            align-items: center;
+            gap: 0.41vw;
+            border-radius: 0.83vw;
+            background: var(--Gradient-yellow, linear-gradient(94deg, #FFE414 0.19%, #FFAE00 100.19%));
+            color: var(--Black, #222);
+        }
+    }
+
+
+
+    
+}
+
+
+.iconsAds{
+    position: absolute;
+    bottom: 4.3vw;
+    left: 50%;
+    transform: translate(-50%);
+    width: 97vw;
+
+    .iconsWrapper{
+        img{
+            position: absolute;
+            z-index: 9;
+        }
+    }
+    
+}
+
+.iconsAds img:first-child{
+    top: -3.48vw;
+    left: 12.13vw;
+    transform: rotate(-7deg);
+    width: 7.3vw;
+}
+
+.iconsAds img:nth-child(2){
+    bottom: 2.6vw;
+    left: 35vw;
+    transform: rotate(0deg);
+    width: 4.16vw;
+}
+.iconsAds img:nth-child(3){
+    bottom: -1vw;
+    right: 25vw;
+    transform: rotate(0deg);
+    width: 8vw;
+}
+.iconsAds img:nth-child(4){
+    top: 4.3vw;
+    right: 12vw;
+    transform: rotate(0deg);
+    width: 4.2vw;
 }

@@ -1,13 +1,51 @@
-'use client';
-import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
+'use client'
+import Image from 'next/image'
+import { useTranslations } from 'next-intl'
+import { Link } from '@/i18n/navigation'
+import TabSection from '@/components/ui/TabSection/TabSection'
+import s from './AchievementsSection.module.css'
+import MainTitle from '@/components/ui/MainTitle/MainTitle'
+import OrbitLogos from '@/components/OrbitLogos/OrbitLogos'
 
-export default function AchievementsSection() {
-  const t = useTranslations('HomePage');
+type AchievementsBlock = {
+  subtitle?: string
+  title?: string
+  cards?: {
+    id: string
+    icon: {
+      url: string
+    }
+    title: string
+    description: string
+    label: string
+  }[]
+}
+
+export default function AchievementsSection({ block }: { block: AchievementsBlock }) {
+  const t = useTranslations('HomePage')
   return (
-    <div>
-      <h1>{t('title')}</h1>
-      <Link href="/blog">{t('about')}</Link>
+    <div className={s.section}>
+      <div className={s.headWrapper}>
+        <TabSection style="gray" text={block.subtitle || ''} />
+        <MainTitle title={block.title || ''} />
+      </div>
+      <div className={s.achievements}>
+        {block.cards?.map((card) => (
+          <div key={card.id} className={s.card}>
+            <div className={s.cardIcon}>
+              <Image src={card.icon.url} alt={card.title} width={100} height={100} />
+              <div className={s.cardIconText}>
+                <span>{card.label}</span>
+              </div>
+            </div>
+            <div className={s.cardContent}>
+              <h3>{card.title}</h3>
+              <p>{card.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <OrbitLogos />
     </div>
-  );
+  )
 }

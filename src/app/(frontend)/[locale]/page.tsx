@@ -6,6 +6,8 @@ import './styles.css'
 import HeroSection from '@/components/sections/HeroSection/HeroSection'
 import AchievementsSection from '@/components/sections/AchievementsSection/AchievementsSection'
 import s from './page.module.css'
+import CasesSection from '@/components/sections/CasesSection/CasesSection'
+import ServicesSection from '@/components/sections/ServicesSection/ServicesSection'
 
 const BLOCK_COMPONENTS: Record<string, React.ComponentType<any>> = {
   'hero-block': HeroSection,
@@ -33,6 +35,15 @@ export default async function HomePage({ params }: { params: { locale: string } 
         if (!BlockComponent) return null
         return <BlockComponent key={block.id || i} block={block} />
       })}
+
+      {/* <CasesSection
+        block={{
+          subtitle: 'Case studies',
+          title: 'Marketing [[in Action]]',
+        }}
+      /> */}
+
+      <ServicesSection />
     </div>
   )
 }

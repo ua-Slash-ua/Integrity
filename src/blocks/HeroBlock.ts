@@ -29,12 +29,12 @@ export const HeroBlock: Block = {
       type: 'row',
       fields: [
         {
-          name: 'first-button',
+          name: 'firstButton',
           type: 'text',
           localized: true,
         },
         {
-          name: 'last-button',
+          name: 'lastButton',
           type: 'text',
           localized: true,
         },

@@ -242,8 +242,8 @@ export interface Page {
             subtitle?: string | null;
             title?: string | null;
             description?: string | null;
-            'first-button'?: string | null;
-            'last-button'?: string | null;
+            firstButton?: string | null;
+            lastButton?: string | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'hero-block';
@@ -255,7 +255,7 @@ export interface Page {
             cards?:
               | {
                   icon?: (string | null) | Media;
-                  'icon-text'?: string | null;
+                  label?: string | null;
                   title?: string | null;
                   description?: string | null;
                   id?: string | null;
@@ -438,8 +438,8 @@ export interface PagesSelect<T extends boolean = true> {
               subtitle?: T;
               title?: T;
               description?: T;
-              'first-button'?: T;
-              'last-button'?: T;
+              firstButton?: T;
+              lastButton?: T;
               id?: T;
               blockName?: T;
             };
@@ -453,7 +453,7 @@ export interface PagesSelect<T extends boolean = true> {
                 | T
                 | {
                     icon?: T;
-                    'icon-text'?: T;
+                    label?: T;
                     title?: T;
                     description?: T;
                     id?: T;

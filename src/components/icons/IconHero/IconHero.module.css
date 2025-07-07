@@ -1,0 +1,26 @@
+.iconHero{
+    display: flex;
+    padding: 0.4vw;
+    align-items: flex-start;
+    gap: 0.4vw;
+    border-radius: 20.8vw;
+    border: 0.05vw solid #FFF;
+    background: linear-gradient(169deg, rgba(255, 255, 255, 0.16) -6.56%, rgba(255, 255, 255, 0.00) 112.07%);
+    transform: translateY(-10%);
+
+    .icon{
+        display: flex;
+        width: 4.1vw;
+        height: 4.1vw;
+        padding: 1.04vw 1.04vw;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+        border-radius: 10.4vw;
+        background: var(--White, #FFF);
+        box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.10);
+        backdrop-filter: blur(3px);
+        margin-left: 4.8vw;
+    }
+}

@@ -9,6 +9,7 @@
     top: 0px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 999;
 
 
     .logoHeader{
@@ -51,6 +52,8 @@
     }
     .left{
         margin-left: auto;
+        display: flex;
+        gap: 0.42vw;
         
         .btn{
             display: flex;
@@ -71,4 +74,44 @@
         }
     }
     
+}
+
+
+
+
+
+.localeWrap{
+    display: flex;
+    padding: 0.41667vw;
+    align-items: center;
+    gap: 0.20833vw;
+    border-radius: 0.625vw;
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(6px);
+    color: var(--Light-garay-2, #B5B5B5);
+    text-align: center;
+    font-family: Mont;
+    font-size: 0.72917vw;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 100%; /* 0.72917rem */
+
+    .currentLang{
+        display: flex;
+        padding: 0.78125vw 0.625vw;
+        justify-content: center;
+        align-items: center;
+        gap: 0.41667vw;
+        border-radius: 0.41667rem;
+        background: var(--White, #FFF);
+        color: #222;
+    }
+    .lang{
+        display: flex;
+        padding: 0.78125vw 0.625vw;
+        justify-content: center;
+        align-items: center;
+        gap: 0.41667vw;
+        cursor: pointer;
+    }
 }
