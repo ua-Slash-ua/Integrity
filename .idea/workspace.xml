@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1276a4da-9f6d-4689-88af-b070ffcf6130" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.npmrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/extensions.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.yarnrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eslint.config.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/playwright.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(frontend)/layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(frontend)/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(frontend)/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(payload)/admin/[[...segments]]/not-found.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(payload)/admin/[[...segments]]/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(payload)/admin/importMap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(payload)/api/[...slug]/route.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(payload)/api/graphql-playground/route.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(payload)/api/graphql/route.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(payload)/custom.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/(payload)/layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/my-route/route.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collections/Achievements.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collections/Cases.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collections/Media.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collections/Reviews.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collections/Services.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collections/Tariffs.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/collections/Users.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/globals/Contacts.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/globals/Menus.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/maxCollections.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/payload-types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/payload.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/e2e/frontend.e2e.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/int/api.int.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest.config.mts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vitest.setup.ts" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/integrity" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ua-Slash-ua&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ua-Slash-ua/Integrity.git&quot;,
+    &quot;accountId&quot;: &quot;337f13d8-998d-457d-acb2-efc160008d3e&quot;
+  }
+}</component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2zMGp2P4zq5GhwKNNFxhhM6fH5a" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/Slash/Programming/Language/NextJs/Integrity/src/globals",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "C:\\Users\\sosla\\PhpStorm 2024.2.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Slash\Programming\Language\NextJs\Integrity\src\globals" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Slash\Programming\Language\NextJs\Integrity\src" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PS-242.26775.23" />
+        <option value="bundled-php-predefined-a98d8de5180a-90914f2295cb-com.jetbrains.php.sharedIndexes-PS-242.26775.23" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1276a4da-9f6d-4689-88af-b070ffcf6130" name="Changes" comment="" />
+      <created>1751533709400</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1751533709400</updated>
+      <workItem from="1751533710605" duration="12876000" />
+      <workItem from="1751876109495" duration="323000" />
+      <workItem from="1751876643156" duration="2344000" />
+      <workItem from="1751879033810" duration="38000" />
+      <workItem from="1751879078442" duration="656000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
