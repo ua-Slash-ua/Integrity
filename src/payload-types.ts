@@ -250,8 +250,8 @@ export interface Page {
           }
         | {
             enabled?: boolean | null;
-            subtitle?: string | null;
-            title?: string | null;
+            subtitle: string;
+            title: string;
             cards?:
               | {
                   icon?: (string | null) | Media;
