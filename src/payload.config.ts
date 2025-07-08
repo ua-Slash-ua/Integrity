@@ -15,6 +15,7 @@ import { CategoriesPosts } from './collections/CategoriesPosts'
 import { MainInfo } from './collections/Main'
 import { Menu } from './collections/Menu'
 import { Pages } from './collections/Pages'
+import { FAQ } from '@/collections/FAQ'
 
 
 
@@ -44,6 +45,7 @@ export default buildConfig({
     Posts,
     CategoriesPosts,
     Pages,
+    FAQ,
   ],
   localization: {
     locales: [

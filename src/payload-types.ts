@@ -72,6 +72,7 @@ export interface Config {
     posts: Post;
     categories: Category;
     pages: Page;
+    faq: Faq;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -87,6 +88,7 @@ export interface Config {
     posts: PostsSelect<false> | PostsSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
     pages: PagesSelect<false> | PagesSelect<true>;
+    faq: FaqSelect<false> | FaqSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -412,13 +414,6 @@ export interface Page {
             enabled?: boolean | null;
             subtitle: string;
             title: string;
-            faq?:
-              | {
-                  faq_question: string;
-                  faq_answer: string;
-                  id?: string | null;
-                }[]
-              | null;
             id?: string | null;
             blockName?: string | null;
             blockType: 'faq-block';
@@ -439,6 +434,17 @@ export interface Page {
      */
     image?: (string | null) | Media;
   };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "faq".
+ */
+export interface Faq {
+  id: string;
+  question: string;
+  answer: string;
   updatedAt: string;
   createdAt: string;
 }
@@ -468,6 +474,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'pages';
         value: string | Page;
+      } | null)
+    | ({
+        relationTo: 'faq';
+        value: string | Faq;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -788,13 +798,6 @@ export interface PagesSelect<T extends boolean = true> {
               enabled?: T;
               subtitle?: T;
               title?: T;
-              faq?:
-                | T
-                | {
-                    faq_question?: T;
-                    faq_answer?: T;
-                    id?: T;
-                  };
               id?: T;
               blockName?: T;
             };
@@ -813,6 +816,16 @@ export interface PagesSelect<T extends boolean = true> {
         description?: T;
         image?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "faq_select".
+ */
+export interface FaqSelect<T extends boolean = true> {
+  question?: T;
+  answer?: T;
   updatedAt?: T;
   createdAt?: T;
 }
