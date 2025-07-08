@@ -408,6 +408,27 @@ export interface Page {
             blockName?: string | null;
             blockType: 'articles-block';
           }
+        | {
+            enabled?: boolean | null;
+            subtitle: string;
+            title: string;
+            faq?:
+              | {
+                  faq_question: string;
+                  faq_answer: string;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'faq-block';
+          }
+        | {
+            enabled?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'order-call-extend-block';
+          }
       )[]
     | null;
   meta?: {
@@ -758,6 +779,29 @@ export interface PagesSelect<T extends boolean = true> {
               enabled?: T;
               subtitle?: T;
               title?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'faq-block'?:
+          | T
+          | {
+              enabled?: T;
+              subtitle?: T;
+              title?: T;
+              faq?:
+                | T
+                | {
+                    faq_question?: T;
+                    faq_answer?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'order-call-extend-block'?:
+          | T
+          | {
+              enabled?: T;
               id?: T;
               blockName?: T;
             };

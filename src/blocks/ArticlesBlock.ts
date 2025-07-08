@@ -14,7 +14,7 @@ export const ArticlesBlock: Block = {
       name: 'subtitle',
       type: 'text',
       required: true,
-      localized:true,
+      localized: true,
       label: {
         en: 'Subtitle',
       },
@@ -23,7 +23,7 @@ export const ArticlesBlock: Block = {
       name: 'title',
       type: 'text',
       required: true,
-      localized:true,
+      localized: true,
       label: {
         en: 'Title',
       },
