@@ -12,6 +12,19 @@ export const OrderCall: Endpoint = {
   path: '/order-call',
   method: 'post',
   handler: async (req) => {
+
+    const apiKey = req.headers.get('x-api-key')
+    const apiSecret = req.headers.get('x-api-secret')
+
+
+    if (
+      apiKey !== process.env.API_KEY ||
+      apiSecret !== process.env.API_SECRET
+    ) {
+      return Response.json({ error: 'Unauthorized: invalid API keys' }, { status: 403 })
+    }
+
+
     await addDataAndFileToRequest(req);
     if (typeof req.json !== 'function') {
       return Response.json({ error: 'JSON parsing not supported' }, { status: 400 });
