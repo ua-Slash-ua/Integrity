@@ -4,7 +4,6 @@ import { seoPlugin } from '@payloadcms/plugin-seo';
 import { payloadCloudPlugin } from '@payloadcms/payload-cloud'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import path from 'path'
-import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
 
@@ -16,6 +15,13 @@ import { MainInfo } from './collections/Main'
 import { Menu } from './collections/Menu'
 import { Pages } from './collections/Pages'
 import { FAQ } from '@/collections/FAQ'
+import { buildConfig } from 'payload'
+
+import {  OrderCall } from '@/endpoints/OrderCall'
+import Applications from '@/collections/Applications'
+import applicationCategory from '@/collections/categories/applicationCategory'
+import { OrderCallFull } from '@/endpoints/OrderCallFull'
+import { Test } from '@/collections/Test'
 
 
 
@@ -28,24 +34,19 @@ export default buildConfig({
     importMap: {
       baseDir: path.resolve(dirname),
     },
-    livePreview: {
-      url: ({ data, collectionConfig }) => {
-        const localePrefix = data?.locale ? `/${data.locale}` : '';
-        const slug = collectionConfig?.slug || '';
-        return `http://localhost:3000${localePrefix}/${slug}`;
-      },
-      collections: ['pages'],
-    },
   },
   globals: [MainInfo, Menu],
-  collections: 
+  collections:
   [
-    Users, 
+    applicationCategory,
+    Users,
     Media,
     Posts,
     CategoriesPosts,
     Pages,
     FAQ,
+    Applications,
+    Test,
   ],
   localization: {
     locales: [
@@ -82,6 +83,10 @@ export default buildConfig({
       generateDescription: ({ doc }) => doc.description,
       generateURL: ({doc, collectionSlug}) => `https://integrity.com/${collectionSlug}/${doc.slug}`,
       tabbedUI: true
-    })
+    }),
   ],
+  endpoints:[
+    OrderCall,
+    OrderCallFull,
+  ]
 })
