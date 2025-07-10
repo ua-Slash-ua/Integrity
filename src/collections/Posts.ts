@@ -1,7 +1,6 @@
 import readingTime from 'reading-time'
 import { CollectionConfig } from 'payload'
 
-
 export const Posts: CollectionConfig = {
   slug: 'posts',
   admin: {
