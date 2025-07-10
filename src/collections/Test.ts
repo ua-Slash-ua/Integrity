@@ -14,6 +14,12 @@ export const Test: CollectionConfig = {
       required: false,
     },
     {
+      name: 'titles',
+      label: { en: 'Title' },
+      type: 'textarea',
+      required: false,
+    },
+    {
       name: 'customField',
       label: { en: 'Моє кастомне поле' },
       type: 'text',

@@ -489,6 +489,7 @@ export interface Application {
 export interface Test {
   id: string;
   title?: string | null;
+  titles?: string | null;
   customField?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -918,6 +919,7 @@ export interface ApplicationsSelect<T extends boolean = true> {
  */
 export interface TestSelect<T extends boolean = true> {
   title?: T;
+  titles?: T;
   customField?: T;
   updatedAt?: T;
   createdAt?: T;
