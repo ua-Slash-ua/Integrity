@@ -38,12 +38,7 @@ export default async function HomePage({ params }: { params: { locale: string } 
         return <BlockComponent key={block.id || i} block={block} />
       })}
 
-      {/* <CasesSection
-        block={{
-          subtitle: 'Case studies',
-          title: 'Marketing [[in Action]]',
-        }}
-      /> */}
+      <CasesSection />
 
       <ServicesSection />
       <SectionUnique />
