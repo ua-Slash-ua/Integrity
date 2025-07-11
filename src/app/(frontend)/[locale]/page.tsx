@@ -8,6 +8,8 @@ import AchievementsSection from '@/components/sections/AchievementsSection/Achie
 import s from './page.module.css'
 import CasesSection from '@/components/sections/CasesSection/CasesSection'
 import ServicesSection from '@/components/sections/ServicesSection/ServicesSection'
+import SectionUnique from '@/components/sections/SectionUnique/SectionUnique'
+import { IndustriesSection } from '@/components/sections/IndustriesSection/IndustriesSection'
 
 const BLOCK_COMPONENTS: Record<string, React.ComponentType<any>> = {
   'hero-block': HeroSection,
@@ -39,6 +41,8 @@ export default async function HomePage({ params }: { params: { locale: string } 
       <CasesSection />
 
       <ServicesSection />
+      <SectionUnique />
+      <IndustriesSection />
     </div>
   )
 }
