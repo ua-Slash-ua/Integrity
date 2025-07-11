@@ -1,4 +1,3 @@
-
 .section {
   width: 100%;
   padding: clamp(32px, 5vw, 80px) 0 0 0;
@@ -423,9 +422,8 @@
         font-size: 2.08333vw;
         font-style: italic;
         font-weight: 900;
-        line-height: 100%; /* 2.08333rem */
+        line-height: 100%; 
         text-transform: uppercase;
         margin-top: 0.6vw;
     }
 } */
-
