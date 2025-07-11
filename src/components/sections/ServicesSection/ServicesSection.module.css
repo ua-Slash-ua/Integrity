@@ -417,7 +417,7 @@
   }
 }
 
-/* .wrapHeading{
+ .wrapHeading{
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -433,5 +433,5 @@
         text-transform: uppercase;
         margin-top: 0.6vw;
     }
-} */
+} 
 

@@ -11,16 +11,15 @@ import ServicesSection from '@/components/sections/ServicesSection/ServicesSecti
 import SectionUnique from '@/components/sections/SectionUnique/SectionUnique'
 import { IndustriesSection } from '@/components/sections/IndustriesSection/IndustriesSection'
 
-const BLOCK_COMPONENTS: Record<string, React.ComponentType<any>> = {
+const BLOCK_COMPONENTS: Record<string, React.ComponentType<{ locale: string; block: any }>> = {
   'hero-block': HeroSection,
   'achievements-block': AchievementsSection,
 }
 
-export default async function HomePage({ params }: { params: { locale: string } }) {
+export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
   const payloadConfig = await config
   const payload = await getPayload({ config: payloadConfig })
-
-  const { locale } = await params
 
   const { docs } = await payload.find({
     collection: 'pages',
@@ -35,7 +34,7 @@ export default async function HomePage({ params }: { params: { locale: string } 
         if (block.enabled === false) return null
         const BlockComponent = BLOCK_COMPONENTS[block.blockType]
         if (!BlockComponent) return null
-        return <BlockComponent key={block.id || i} block={block} />
+        return <BlockComponent key={block.id || i} block={block} locale={locale} />
       })}
 
       <CasesSection />

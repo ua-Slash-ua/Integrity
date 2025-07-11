@@ -6,6 +6,8 @@ import config from '@payload-config'
 import { RootPage, generatePageMetadata } from '@payloadcms/next/views'
 import { importMap } from '../importMap'
 
+// УВАГА: Цей тип Args використовується лише для Payload admin-сторінок!
+// Не використовуйте його для frontend-сторінок, params там має бути об'єктом, а не Promise.
 type Args = {
   params: Promise<{
     segments: string[]
@@ -15,7 +17,7 @@ type Args = {
   }>
 }
 
-export const generateMetadata = ({ params, searchParams }: Args): Promise<Metadata> =>
+export const generateMetadata = async ({ params, searchParams }: Args): Promise<Metadata> =>
   generatePageMetadata({ config, params, searchParams })
 
 const Page = ({ params, searchParams }: Args) =>
