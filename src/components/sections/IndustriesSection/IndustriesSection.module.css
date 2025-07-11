@@ -1,29 +1,29 @@
 .section {
   width: 100%;
-  padding: clamp(40px, 6vw, 120px) 0;
+  padding: 4.17vw 0;
   background: var(--white);
 }
 
 .header {
   text-align: center;
-  margin-bottom: clamp(40px, 5vw, 80px);
+  margin-bottom: 4.17vw;
 }
 
 .expertise {
   display: block;
   font-family: var(--second-family);
-  font-size: 14px;
+  font-size: 0.73vw;
   font-weight: 700;
   letter-spacing: 0.13em;
   text-transform: uppercase;
   color: var(--gray);
-  margin-bottom: 12px;
+  margin-bottom: 0.63vw;
 }
 
 .title {
   font-family: var(--third-family);
   font-weight: 900;
-  font-size: clamp(32px, 6vw, 80px);
+  font-size: 4.17vw;
   line-height: 110%;
   text-transform: uppercase;
   color: var(--light-gray-2);
@@ -43,35 +43,31 @@
 
 .casesCount {
   color: var(--primary, #ffe414);
-  font-size: 0.7em;
-  margin-left: 8px;
+  font-size: 0.36vw;
+  margin-left: 0.42vw;
   font-family: var(--third-family);
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(clamp(180px, 14vw, 288px), clamp(180px, 14vw, 288px))
-  );
-  /* gap: clamp(16px, 3vw, 40px); */
-  gap: clamp(4px, 1vw, 16px);
+  grid-template-columns: repeat(auto-fit, minmax(9.38vw, 15vw));
+  gap: 2.08vw;
   justify-content: center;
   align-items: stretch;
   width: 100%;
   margin: 0 auto;
-  padding-left: clamp(16px, 6vw, 80px);
-  padding-right: clamp(16px, 6vw, 80px);
+  padding-left: 4.17vw;
+  padding-right: 4.17vw;
   overflow-x: auto;
 }
 
 .card {
   background: var(--white);
-  border: 1.5px dashed var(--gray);
-  border-radius: clamp(16px, 2vw, 24px);
-  padding: clamp(16px, 2vw, 32px) 0;
-  width: clamp(180px, 14vw, 288px);
-  height: clamp(320px, 38vw, 512px);
+  border: 0.08vw dashed var(--gray);
+  border-radius: 1.25vw;
+  padding: 1.67vw 0;
+  width: 15vw;
+  height: 26.67vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -83,13 +79,13 @@
 }
 
 .card:hover {
-  outline: 2px solid var(--primary, #ffe414);
+  outline: 0.1vw solid var(--primary, #ffe414);
   z-index: 2;
 }
 
 .active {
-  border: 2.5px solid var(--primary, #ffe414);
-  box-shadow: 0 0 0 2px #ffe41433;
+  border: 0.13vw solid var(--primary, #ffe414);
+  box-shadow: 0 0 0 0.1vw #ffe41433;
 }
 
 .cardTop {
@@ -97,17 +93,17 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 24px;
+  margin-bottom: 1.25vw;
   position: relative;
 }
 
 .cases {
   font-family: var(--font-family);
-  font-size: clamp(12px, 1.5vw, 15px);
+  font-size: 0.78vw;
   font-weight: 700;
   color: var(--black);
   letter-spacing: 0.01em;
-  margin-left: 8px;
+  margin-left: 0.42vw;
 }
 
 .closeBtnWrapper {
@@ -115,14 +111,14 @@
   align-items: flex-start;
   justify-content: flex-end;
   padding-top: 0;
-  padding-right: 24px;
-  height: 1px;
+  padding-right: 1.25vw;
+  height: 0.05vw;
 }
 
 .closeBtn {
-  width: 52px;
-  height: 52px;
-  padding: 24px;
+  width: 2.71vw;
+  height: 2.71vw;
+  padding: 1.25vw;
   border-radius: 50%;
   background: var(--black);
   display: flex;
@@ -131,7 +127,7 @@
   border: none;
   outline: none;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 0.1vw 0.42vw rgba(0, 0, 0, 0.07);
   transition:
     background 0.2s,
     transform 0.2s;
@@ -143,24 +139,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
+  width: 1.04vw;
+  height: 1.04vw;
   transform: rotate(-180deg);
 }
 
 .iconWrap {
-  margin: clamp(16px, 3vw, 32px) 0;
+  margin: 1.67vw 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: clamp(48px, 6vw, 80px);
-  height: clamp(48px, 6vw, 80px);
+  width: 4.17vw;
+  height: 4.17vw;
 }
 
 .cardTitle {
   font-family: var(--font-family);
   font-weight: 900;
-  font-size: clamp(14px, 2vw, 22px);
+  font-size: 1.15vw;
   line-height: 110%;
   text-transform: uppercase;
   color: var(--black);
