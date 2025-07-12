@@ -1,15 +1,21 @@
 import s from '../IconHero/IconHero.module.css'
 
-export default function IconHero() {
+export default function IconHero({
+  containerClass,
+  iconClass,
+}: {
+  containerClass?: string
+  iconClass?: string
+}) {
   return (
-    <div className={s.iconHero}>
+    <div className={`${s.iconHero} ${containerClass ? containerClass : ''}`}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="48"
         height="48"
         viewBox="0 0 48 48"
         fill="none"
-        className={s.icon}
+        className={`${s.icon} ${iconClass ? iconClass : ''}`}
       >
         <g clip-path="url(#clip0_1034_6189)">
           <path
