@@ -11,6 +11,7 @@ import ServicesSection from '@/components/sections/ServicesSection/ServicesSecti
 import SectionUnique from '@/components/sections/SectionUnique/SectionUnique'
 import { IndustriesSection } from '@/components/sections/IndustriesSection/IndustriesSection'
 import AboutTheFounderSection from '@/components/sections/AboutTheFounderSection/AboutTheFounderSection'
+import ApproachSection from '@/components/sections/ApproachSection/ApproachSection'
 
 const BLOCK_COMPONENTS: Record<string, React.ComponentType<{ locale: string; block: any }>> = {
   'hero-block': HeroSection,
@@ -44,6 +45,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <SectionUnique />
       <IndustriesSection />
       <AboutTheFounderSection />
+      <ApproachSection />
     </div>
   )
 }

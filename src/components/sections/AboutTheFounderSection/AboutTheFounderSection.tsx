@@ -13,8 +13,8 @@ const AboutTheFounderSection = () => {
           <Image
             className={s.founderImage}
             src={'/images/boss.jpg'}
-            width={30}
-            height={30}
+            width={1486}
+            height={1486}
             alt="founder"
           />
           <IconHero containerClass={s.logoContainer} iconClass={s.logo} />
