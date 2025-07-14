@@ -1,0 +1,237 @@
+.section {
+  padding-top: 10.42vw;
+  padding-bottom: 20.84vw;
+  background-color: rgba(34, 34, 34, 1);
+
+  .container {
+    position: relative;
+    .topBlock {
+      margin-bottom: 4.2vw;
+
+      .upperDescr {
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 2.1vw;
+        width: max-content;
+        padding: 0.42vw 1.25vw;
+        border-radius: 2.1vw;
+        background-color: rgba(255, 255, 255, 0.1);
+
+        font-size: 0.7vw;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.4;
+        letter-spacing: 1.82px;
+        text-transform: uppercase;
+        color: #ffffff;
+      }
+
+      h2 {
+        color: #ffffff;
+
+        span {
+          color: inherit;
+        }
+      }
+    }
+
+    .sloganCont {
+      width: 54.5vw;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 14.01vw;
+      padding: 4.2vw;
+
+      border-radius: 1.7vw;
+      border: 0.05vw solid #fff;
+      background: linear-gradient(
+        139deg,
+        rgba(255, 255, 255, 0.12) 10.53%,
+        rgba(41, 41, 41, 0.2) 82.16%
+      );
+      backdrop-filter: blur(0.1vw);
+
+      .images {
+        width: max-content;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 3.1vw;
+
+        display: flex;
+
+        .imageContainer {
+          width: 6.1vw;
+          height: 6.1vw;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          border: 0.05vw solid #fff;
+        }
+
+        .decision {
+          position: relative;
+          left: 1vw;
+          z-index: -1;
+          background: linear-gradient(
+            169deg,
+            rgba(255, 255, 255, 0.16) -6.56%,
+            rgba(255, 255, 255, 0) 112.07%
+          );
+          backdrop-filter: blur(1.6400281190872192px);
+        }
+
+        .logo {
+          background-color: rgba(255, 228, 20, 1);
+        }
+
+        img {
+          position: relative;
+          z-index: 10;
+          right: 1vw;
+        }
+      }
+
+      h3 {
+        text-align: center;
+        font-size: 2.5vw;
+        font-style: italic;
+        font-weight: 900;
+        line-height: 1.4;
+        text-transform: uppercase;
+        color: #ffffff;
+
+        .computer {
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          height: 3.33vw;
+          transform: translateY(0.5vw);
+
+          img {
+            width: 3.33vw;
+            height: 3.33vw;
+          }
+        }
+      }
+
+      .subtitle {
+        margin-bottom: 2.08vw;
+
+        text-align: right;
+        font-size: 1.25vw;
+        font-style: italic;
+        font-weight: 900;
+        line-height: 100%;
+        text-transform: uppercase;
+        color: #ffffff;
+      }
+
+      .approach {
+        width: 26.77vw;
+        margin-left: auto;
+        margin-right: auto;
+
+        font-size: 0.83v;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 1.4;
+        letter-spacing: -0.32px;
+
+        color: rgba(168, 168, 168, 1);
+
+        .paragraph {
+          margin-bottom: 0.83vw;
+        }
+
+        span {
+          color: #ffffff;
+        }
+      }
+    }
+
+    .iconsLineCont {
+      position: absolute;
+      bottom: 30%;
+      left: 0;
+    }
+
+    .advantages {
+      display: flex;
+      justify-content: center;
+      gap: 0.42vw;
+
+      .advantageItem {
+        display: flex;
+        flex-direction: column;
+        width: 22.29vw;
+        height: 20.73vw;
+        padding: 2.08vw;
+        border: 0.05vw solid #fff;
+        border-radius: 1.67vw;
+
+        background: linear-gradient(
+          141deg,
+          rgba(255, 255, 255, 0.12) 8.87%,
+          rgba(41, 41, 41, 0.12) 93.36%
+        );
+
+        backdrop-filter: blur(6px);
+
+        .upperDescr {
+          width: max-content;
+          padding: 0.63vw 0.83vw;
+
+          display: flex;
+          align-items: center;
+          gap: 0.52vw;
+
+          border-radius: 0.63vw;
+          background-color: rgba(255, 255, 255, 0.05);
+
+          svg {
+            width: 1.25vw;
+            height: 1.25vw;
+          }
+
+          p {
+            font-size: 0.83vw;
+            font-style: normal;
+            font-weight: 800;
+            line-height: 1.4;
+            letter-spacing: -0.32px;
+
+            color: #ffffff;
+          }
+        }
+
+        h3 {
+          margin-top: auto;
+          margin-bottom: 1.67vw;
+          font-size: 1.67vw;
+          font-style: italic;
+          font-weight: 900;
+          line-height: 1;
+          text-transform: uppercase;
+
+          color: #ffffff;
+        }
+
+        p {
+          font-size: 0.83vw;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 1.4;
+          letter-spacing: -0.32px;
+
+          color: rgba(181, 181, 181, 1);
+        }
+      }
+
+      .advantageItem:nth-child(even) {
+        transform: translateY(50%);
+      }
+    }
+  }
+}
