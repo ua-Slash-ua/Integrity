@@ -1,0 +1,20 @@
+.navSwiper{
+    display: flex;
+    width: 30vw;
+    padding: 0.41667vw;
+    align-items: center;
+    gap: 0.41667vw;
+    border-radius: 0.83333vw;
+    background: #FFF;
+    margin-top: 3.13vw;
+
+    .navSwiperPrev, .navSwiperNext{
+        display: flex;
+        height: 2.91667vw;
+        padding: 0.83333vw 0.9375vw;
+        justify-content: center;
+        align-items: center;
+        gap: 0.52083vw;
+        flex: 1 0 0;
+    }
+}

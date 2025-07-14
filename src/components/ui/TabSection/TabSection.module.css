@@ -1,0 +1,29 @@
+.tabSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  margin: 0 auto;
+  margin-bottom: 2vw;
+  padding: 0.41vw 1.25vw;
+  justify-content: center;
+  align-items: center;
+  gap: 0.52vw;
+  border-radius: 2.08333rem;
+}
+
+.tabSection h2 {
+    text-align: center;
+    font-family: "Inter Tight";
+    font-size: 0.7vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+    letter-spacing: 0.09vw;
+    text-transform: uppercase;
+}
+
+.tabSection.gray {
+    color: #222;
+    background: #F9F9F9;
+}
