@@ -1,7 +1,7 @@
 import type { Block } from 'payload'
 
-export const OrderCallBlock: Block = {
-  slug: 'order-call-block',
+export const OrderCallExtendBlock: Block = {
+  slug: 'order-call-extend-block',
   fields: [
     {
       name: 'enabled',

@@ -13,12 +13,20 @@ export const CasesBlock: Block = {
     {
       name: 'subtitle',
       type: 'text',
-      localized: true,
+      required: true,
+      localized:true,
+      label: {
+        en: 'Subtitle',
+      },
     },
     {
       name: 'title',
       type: 'text',
-      localized: true,
+      required: true,
+      localized:true,
+      label: {
+        en: 'Title',
+      },
     },
     {
       type:'array',

@@ -67,11 +67,15 @@ export interface Config {
   };
   blocks: {};
   collections: {
+    'category-app': CategoryApp;
     users: User;
     media: Media;
     posts: Post;
     categories: Category;
     pages: Page;
+    faq: Faq;
+    applications: Application;
+    test: Test;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -82,11 +86,15 @@ export interface Config {
     };
   };
   collectionsSelect: {
+    'category-app': CategoryAppSelect<false> | CategoryAppSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     posts: PostsSelect<false> | PostsSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
     pages: PagesSelect<false> | PagesSelect<true>;
+    faq: FaqSelect<false> | FaqSelect<true>;
+    applications: ApplicationsSelect<false> | ApplicationsSelect<true>;
+    test: TestSelect<false> | TestSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -128,6 +136,16 @@ export interface UserAuthOperations {
     email: string;
     password: string;
   };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "category-app".
+ */
+export interface CategoryApp {
+  id: string;
+  title: string;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -239,8 +257,8 @@ export interface Page {
     | (
         | {
             enabled?: boolean | null;
-            subtitle?: string | null;
-            title?: string | null;
+            subtitle: string;
+            title: string;
             description?: string | null;
             firstButton?: string | null;
             lastButton?: string | null;
@@ -250,8 +268,8 @@ export interface Page {
           }
         | {
             enabled?: boolean | null;
-            subtitle?: string | null;
-            title?: string | null;
+            subtitle: string;
+            title: string;
             cards?:
               | {
                   icon?: (string | null) | Media;
@@ -267,8 +285,8 @@ export interface Page {
           }
         | {
             enabled?: boolean | null;
-            subtitle?: string | null;
-            title?: string | null;
+            subtitle: string;
+            title: string;
             case?:
               | {
                   case_title?: string | null;
@@ -293,8 +311,8 @@ export interface Page {
           }
         | {
             enabled?: boolean | null;
-            subtitle?: string | null;
-            title?: string | null;
+            subtitle: string;
+            title: string;
             service?:
               | {
                   service_title?: string | null;
@@ -315,44 +333,56 @@ export interface Page {
           }
         | {
             enabled?: boolean | null;
+            subtitle: string;
+            title: string;
             id?: string | null;
             blockName?: string | null;
             blockType: 'what-us-block';
           }
         | {
             enabled?: boolean | null;
+            subtitle: string;
+            title: string;
             id?: string | null;
             blockName?: string | null;
             blockType: 'expertise-block';
           }
         | {
             enabled?: boolean | null;
+            subtitle: string;
+            title: string;
             id?: string | null;
             blockName?: string | null;
             blockType: 'workflow-block';
           }
         | {
             enabled?: boolean | null;
+            subtitle: string;
+            title: string;
             id?: string | null;
             blockName?: string | null;
             blockType: 'outcomes-block';
           }
         | {
             enabled?: boolean | null;
+            subtitle: string;
+            title: string;
             id?: string | null;
             blockName?: string | null;
             blockType: 'about-founder-block';
           }
         | {
             enabled?: boolean | null;
+            subtitle: string;
+            title: string;
             id?: string | null;
             blockName?: string | null;
             blockType: 'our-team-block';
           }
         | {
             enabled?: boolean | null;
-            subtitle?: string | null;
-            title?: string | null;
+            subtitle: string;
+            title: string;
             review?:
               | {
                   rating?: string | null;
@@ -367,6 +397,48 @@ export interface Page {
             id?: string | null;
             blockName?: string | null;
             blockType: 'reviews-block';
+          }
+        | {
+            enabled?: boolean | null;
+            subtitle: string;
+            title: string;
+            tariff?:
+              | {
+                  name_tariff: string;
+                  title: string;
+                  description: string;
+                  result: {
+                    points: string;
+                    id?: string | null;
+                  }[];
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'tariffs-block';
+          }
+        | {
+            enabled?: boolean | null;
+            subtitle: string;
+            title: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'articles-block';
+          }
+        | {
+            enabled?: boolean | null;
+            subtitle: string;
+            title: string;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'faq-block';
+          }
+        | {
+            enabled?: boolean | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'order-call-extend-block';
           }
       )[]
     | null;
@@ -383,11 +455,56 @@ export interface Page {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "faq".
+ */
+export interface Faq {
+  id: string;
+  question: string;
+  answer: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "applications".
+ */
+export interface Application {
+  id: string;
+  category: string | CategoryApp;
+  isView?: boolean | null;
+  meta?:
+    | {
+        key: string;
+        value?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "test".
+ */
+export interface Test {
+  id: string;
+  title?: string | null;
+  titles?: string | null;
+  customField?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
   id: string;
   document?:
+    | ({
+        relationTo: 'category-app';
+        value: string | CategoryApp;
+      } | null)
     | ({
         relationTo: 'users';
         value: string | User;
@@ -407,6 +524,18 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'pages';
         value: string | Page;
+      } | null)
+    | ({
+        relationTo: 'faq';
+        value: string | Faq;
+      } | null)
+    | ({
+        relationTo: 'applications';
+        value: string | Application;
+      } | null)
+    | ({
+        relationTo: 'test';
+        value: string | Test;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -449,6 +578,15 @@ export interface PayloadMigration {
   batch?: number | null;
   updatedAt: string;
   createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "category-app_select".
+ */
+export interface CategoryAppSelect<T extends boolean = true> {
+  title?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -619,6 +757,8 @@ export interface PagesSelect<T extends boolean = true> {
           | T
           | {
               enabled?: T;
+              subtitle?: T;
+              title?: T;
               id?: T;
               blockName?: T;
             };
@@ -626,6 +766,8 @@ export interface PagesSelect<T extends boolean = true> {
           | T
           | {
               enabled?: T;
+              subtitle?: T;
+              title?: T;
               id?: T;
               blockName?: T;
             };
@@ -633,6 +775,8 @@ export interface PagesSelect<T extends boolean = true> {
           | T
           | {
               enabled?: T;
+              subtitle?: T;
+              title?: T;
               id?: T;
               blockName?: T;
             };
@@ -640,6 +784,8 @@ export interface PagesSelect<T extends boolean = true> {
           | T
           | {
               enabled?: T;
+              subtitle?: T;
+              title?: T;
               id?: T;
               blockName?: T;
             };
@@ -647,6 +793,8 @@ export interface PagesSelect<T extends boolean = true> {
           | T
           | {
               enabled?: T;
+              subtitle?: T;
+              title?: T;
               id?: T;
               blockName?: T;
             };
@@ -654,6 +802,8 @@ export interface PagesSelect<T extends boolean = true> {
           | T
           | {
               enabled?: T;
+              subtitle?: T;
+              title?: T;
               id?: T;
               blockName?: T;
             };
@@ -677,6 +827,54 @@ export interface PagesSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        'tariffs-block'?:
+          | T
+          | {
+              enabled?: T;
+              subtitle?: T;
+              title?: T;
+              tariff?:
+                | T
+                | {
+                    name_tariff?: T;
+                    title?: T;
+                    description?: T;
+                    result?:
+                      | T
+                      | {
+                          points?: T;
+                          id?: T;
+                        };
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        'articles-block'?:
+          | T
+          | {
+              enabled?: T;
+              subtitle?: T;
+              title?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'faq-block'?:
+          | T
+          | {
+              enabled?: T;
+              subtitle?: T;
+              title?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'order-call-extend-block'?:
+          | T
+          | {
+              enabled?: T;
+              id?: T;
+              blockName?: T;
+            };
       };
   meta?:
     | T
@@ -685,6 +883,44 @@ export interface PagesSelect<T extends boolean = true> {
         description?: T;
         image?: T;
       };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "faq_select".
+ */
+export interface FaqSelect<T extends boolean = true> {
+  question?: T;
+  answer?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "applications_select".
+ */
+export interface ApplicationsSelect<T extends boolean = true> {
+  category?: T;
+  isView?: T;
+  meta?:
+    | T
+    | {
+        key?: T;
+        value?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "test_select".
+ */
+export interface TestSelect<T extends boolean = true> {
+  title?: T;
+  titles?: T;
+  customField?: T;
   updatedAt?: T;
   createdAt?: T;
 }

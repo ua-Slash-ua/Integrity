@@ -1,7 +1,7 @@
 import type { Block } from 'payload'
 
-export const WhatUsBlock: Block = {
-  slug: 'what-us-block',
+export const FaqBlock: Block = {
+  slug: 'faq-block',
   fields: [
     {
       name: 'enabled',
@@ -28,5 +28,6 @@ export const WhatUsBlock: Block = {
         en: 'Title',
       },
     },
+
   ],
 }

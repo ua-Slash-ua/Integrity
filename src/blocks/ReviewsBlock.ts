@@ -13,6 +13,7 @@ export const ReviewsBlock: Block = {
     {
       name: 'subtitle',
       type: 'text',
+      required: true,
       localized: true,
       label: {
         en: 'Subtitle',
@@ -21,6 +22,7 @@ export const ReviewsBlock: Block = {
     {
       name: 'title',
       type: 'text',
+      required: true,
       localized: true,
       label: {
         en: 'Title',

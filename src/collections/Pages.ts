@@ -11,6 +11,10 @@ import { OutcomesBlock } from '@/blocks/OutcomesBlock'
 import { AboutFounderBlock } from '@/blocks/AboutFounderBlock'
 import { OurTeamBlock } from '@/blocks/OurTeamBlock'
 import { ReviewsBlock } from '@/blocks/ReviewsBlock'
+import { TariffsBlock } from '@/blocks/TariffsBlock'
+import { ArticlesBlock } from '@/blocks/ArticlesBlock'
+import { FaqBlock } from '@/blocks/FaqBlock'
+import { OrderCallExtendBlock } from '@/blocks/OrderCallExtendBlock'
 
 export const Pages: CollectionConfig = {
     slug: 'pages',
@@ -63,6 +67,10 @@ export const Pages: CollectionConfig = {
           AboutFounderBlock,
           OurTeamBlock,
           ReviewsBlock,
+          TariffsBlock,
+          ArticlesBlock,
+          FaqBlock,
+          OrderCallExtendBlock,
         ],
       }
     ],
