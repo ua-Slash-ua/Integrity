@@ -1,5 +1,4 @@
 import { CollectionConfig } from 'payload'
-import { PreviewSvg } from '@/plugin'
 
 export const Test: CollectionConfig = {
   slug: 'test',
@@ -19,15 +18,15 @@ export const Test: CollectionConfig = {
       type: 'textarea',
       required: false,
     },
-    {
-      name: 'customField',
-      label: { en: 'Моє кастомне поле' },
-      type: 'text',
-      required: false,
-      admin: {
-        components: {
-          Field: PreviewSvg,
-        },
-      },
-    },
+    // {
+    //   name: 'customField',
+    //   label: { en: 'Моє кастомне поле' },
+    //   type: 'text',
+    //   required: false,
+    //   admin: {
+    //     components: {
+    //       Field: PreviewSvg,
+    //     },
+    //   },
+    // },
   ]}
