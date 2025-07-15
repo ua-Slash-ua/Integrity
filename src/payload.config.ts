@@ -21,7 +21,6 @@ import {  OrderCall } from '@/endpoints/OrderCall'
 import Applications from '@/collections/Applications'
 import applicationCategory from '@/collections/categories/applicationCategory'
 import { OrderCallFull } from '@/endpoints/OrderCallFull'
-import { Test } from '@/collections/Test'
 
 
 
@@ -46,7 +45,6 @@ export default buildConfig({
     Pages,
     FAQ,
     Applications,
-    Test,
   ],
   localization: {
     locales: [
