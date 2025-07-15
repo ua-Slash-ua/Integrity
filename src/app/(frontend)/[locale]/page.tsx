@@ -12,6 +12,7 @@ import SectionUnique from '@/components/sections/SectionUnique/SectionUnique'
 import { IndustriesSection } from '@/components/sections/IndustriesSection/IndustriesSection'
 import AboutTheFounderSection from '@/components/sections/AboutTheFounderSection/AboutTheFounderSection'
 import ApproachSection from '@/components/sections/ApproachSection/ApproachSection'
+import LatestInsightsSection from '@/components/sections/LatestInsightsSection/LatestInsightsSection'
 import OutcomesSection from '@/components/sections/OutcomesSection/OutcomesSection'
 
 const BLOCK_COMPONENTS: Record<string, React.ComponentType<{ locale: string; block: any }>> = {
@@ -48,6 +49,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <OutcomesSection />
       <AboutTheFounderSection />
       <ApproachSection />
+      <LatestInsightsSection />
     </div>
   )
 }
