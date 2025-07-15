@@ -48,9 +48,9 @@ const MovingIconsLine = ({ className }: { className?: string }) => {
       <svg
         className={styles.svg}
         xmlns="http://www.w3.org/2000/svg"
-        width="1866"
-        height="344"
-        viewBox="0 0 1866 344"
+        width="100%"
+        height="auto"
+        viewBox="0 0 1920 400"
         fill="none"
       >
         <path

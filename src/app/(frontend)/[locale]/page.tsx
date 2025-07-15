@@ -12,6 +12,8 @@ import SectionUnique from '@/components/sections/SectionUnique/SectionUnique'
 import { IndustriesSection } from '@/components/sections/IndustriesSection/IndustriesSection'
 import AboutTheFounderSection from '@/components/sections/AboutTheFounderSection/AboutTheFounderSection'
 import ApproachSection from '@/components/sections/ApproachSection/ApproachSection'
+import ReviewsSection from '@/components/sections/ReviewsSection/ReviewsSection'
+import TariffsSection from '@/components/sections/TariffsSection/TariffsSection'
 import LatestInsightsSection from '@/components/sections/LatestInsightsSection/LatestInsightsSection'
 import OutcomesSection from '@/components/sections/OutcomesSection/OutcomesSection'
 
@@ -49,6 +51,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <OutcomesSection />
       <AboutTheFounderSection />
       <ApproachSection />
+      <ReviewsSection />
+      <TariffsSection />
       <LatestInsightsSection />
     </div>
   )
