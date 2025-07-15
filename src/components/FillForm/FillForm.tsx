@@ -54,8 +54,8 @@ const FillForm = () => {
                 onChange={setPhoneNumber}
                 inputStyle={{
                   width: '100%',
-                  borderRadius: '16px',
-                  padding: '24px',
+                  borderRadius: '0.83vw', // 16px → 0.83vw
+                  padding: '1.25vw',
                   background: 'var(--light-gray)',
                 }}
                 containerStyle={{ width: '100%' }}
