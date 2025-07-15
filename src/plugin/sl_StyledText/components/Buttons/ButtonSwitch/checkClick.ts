@@ -11,8 +11,8 @@ type checkClickProps = {
 export function checkClick({ e, ids }:checkClickProps) {
   const idList = [ids.id_preview_container, ids.id_fulltext_container]
   e.preventDefault()
-  let element = e.currentTarget
-  let type: string = element.getAttribute('data-id-container')!
+  const element = e.currentTarget
+  const type: string = element.getAttribute('data-id-container')!
   idList.forEach((id) => {
     const el = document.getElementById(id) as HTMLElement | null
     if (!el) return
