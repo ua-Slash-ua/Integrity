@@ -2,7 +2,7 @@
 import { useTranslations } from 'next-intl'
 import { Link } from '@/i18n/navigation'
 import s from './HeroSection.module.css'
-import IconHero from '../../icons/IconHero/IconHero' // ваш SVG-компонент
+import IconHero from '../../icons/IconHero/IconHero'
 import GridBackground from '../../GridBackground/GridBackground'
 
 type HeroBlock = {
