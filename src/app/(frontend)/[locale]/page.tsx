@@ -14,13 +14,21 @@ import AboutTheFounderSection from '@/components/sections/AboutTheFounderSection
 import ApproachSection from '@/components/sections/ApproachSection/ApproachSection'
 import ReviewsSection from '@/components/sections/ReviewsSection/ReviewsSection'
 import TariffsSection from '@/components/sections/TariffsSection/TariffsSection'
+
+import FaqSection from '@/components/sections/FaqSection/FaqSection'
+import FormSection from '@/components/sections/FormSection/FormSection'
+
 import LatestInsightsSection from '@/components/sections/LatestInsightsSection/LatestInsightsSection'
 import OutcomesSection from '@/components/sections/OutcomesSection/OutcomesSection'
 
 const BLOCK_COMPONENTS: Record<string, React.ComponentType<{ locale: string; block: any }>> = {
   'hero-block': HeroSection,
   'achievements-block': AchievementsSection,
+
+  'faq-block': FaqSection,
+
   'services-block': ServicesSection,
+
 }
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
@@ -52,6 +60,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <ApproachSection />
       <ReviewsSection />
       <TariffsSection />
+
+      <FaqSection />
+      <FormSection />
+
       <LatestInsightsSection />
     </div>
   )

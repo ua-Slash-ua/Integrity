@@ -11,6 +11,9 @@
     justify-content: flex-start;
     position: relative;
 
+    .icon{
+        fill: #222222;
+    }
     
     .heroWrap{
         display: flex;
