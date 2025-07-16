@@ -361,3 +361,13 @@
   object-fit: cover;
   z-index: 2;
 }
+.order {
+  font-family: var(--font-family);
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--white);
+}
+.expertCard {
+  width: 28.23vw;
+  height: 20.63vw;
+}
