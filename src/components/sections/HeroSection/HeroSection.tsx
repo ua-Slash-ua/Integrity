@@ -15,7 +15,7 @@ type HeroBlock = {
 
 export default function HeroSection({ block }: { block: HeroBlock }) {
   const ICON_MAP: Record<string, React.ReactNode> = {
-    icon: <IconHero />,
+    icon: <IconHero iconClass={s.icon} />,
   }
 
   const parts = block.title?.split(/(\{icon\})/g) || []
