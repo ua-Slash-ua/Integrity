@@ -140,8 +140,8 @@
   /* padding: 0.833vw; */
   width: 7.604vw;
   height: 2.8125vw;
-  background: var(--light-gray);
-  border: 0.13vw solid var(--accent-purple);
+  /* background: var(--light-gray); */
+  /* border: 0.13vw solid var(--accent-purple); */
   box-sizing: border-box;
   cursor: pointer;
   margin-top: auto;

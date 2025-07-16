@@ -48,7 +48,10 @@ const SectionUnique = () => (
     <div
       style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: 40 }}
     >
-      <div className={styles.sectionUniqueBadge}>WHY US?</div>
+      <div className={styles.sectionUniqueBadge}>
+        WHY US?
+        {/* <p className={styles.sectionLabel}>WHY US?</p> */}
+      </div>
       <h2 className={styles.sectionUniqueTitle}>
         WHAT MAKES <span>US UNIQUE?</span>
       </h2>

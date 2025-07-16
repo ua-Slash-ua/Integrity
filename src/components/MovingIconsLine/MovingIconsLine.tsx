@@ -68,11 +68,11 @@ const MovingIconsLine = ({ className }: { className?: string }) => {
             y2="183.472"
             gradientUnits="userSpaceOnUse"
           >
-            <stop offset="0.015518" stop-opacity="0.2" />
-            <stop offset="0.0965764" stop-color="#E4D7F9" />
-            <stop offset="0.404553" stop-color="#D6CAEA" stop-opacity="0.95157" />
-            <stop offset="0.769516" stop-color="#FFF6AE" />
-            <stop offset="0.964975" stop-opacity="0.2" />
+            <stop offset="0.015518" stopOpacity="0.2" />
+            <stop offset="0.0965764" stopColor="#E4D7F9" />
+            <stop offset="0.404553" stopColor="#D6CAEA" stopOpacity="0.95157" />
+            <stop offset="0.769516" stopColor="#FFF6AE" />
+            <stop offset="0.964975" stopOpacity="0.2" />
           </linearGradient>
         </defs>
       </svg>
@@ -104,7 +104,7 @@ const adwords = (
 
 const linkedin = (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g clip-path="url(#clip0_3012_1138)">
+    <g clipPath="url(#clip0_3012_1138)">
       <path d="M23.9977 23.9988L24.0037 23.9978V15.1958C24.0037 10.8898 23.0767 7.57275 18.0427 7.57275C15.6227 7.57275 13.9987 8.90075 13.3357 10.1598H13.2657V7.97475H8.49268V23.9978H13.4627V16.0638C13.4627 13.9748 13.8587 11.9548 16.4457 11.9548C18.9947 11.9548 19.0327 14.3388 19.0327 16.1978V23.9988H23.9977Z" />
       <path d="M0.39502 7.97656H5.37102V23.9996H0.39502V7.97656Z" />
       <path d="M2.88249 0C1.29149 0 0.000488281 1.291 0.000488281 2.882C0.000488281 4.473 1.29149 5.791 2.88249 5.791C4.47349 5.791 5.76449 4.473 5.76449 2.882C5.76349 1.291 4.47249 0 2.88249 0Z" />
