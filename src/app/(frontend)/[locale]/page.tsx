@@ -20,6 +20,7 @@ import OutcomesSection from '@/components/sections/OutcomesSection/OutcomesSecti
 const BLOCK_COMPONENTS: Record<string, React.ComponentType<{ locale: string; block: any }>> = {
   'hero-block': HeroSection,
   'achievements-block': AchievementsSection,
+  'services-block': ServicesSection,
 }
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
@@ -44,8 +45,6 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       })}
 
       <CasesSection />
-
-      <ServicesSection />
       <SectionUnique />
       <IndustriesSection />
       <OutcomesSection />

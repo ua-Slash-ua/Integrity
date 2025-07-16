@@ -75,7 +75,6 @@ export interface Config {
     pages: Page;
     faq: Faq;
     applications: Application;
-    test: Test;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -94,7 +93,6 @@ export interface Config {
     pages: PagesSelect<false> | PagesSelect<true>;
     faq: FaqSelect<false> | FaqSelect<true>;
     applications: ApplicationsSelect<false> | ApplicationsSelect<true>;
-    test: TestSelect<false> | TestSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -484,17 +482,6 @@ export interface Application {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "test".
- */
-export interface Test {
-  id: string;
-  title?: string | null;
-  titles?: string | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -531,10 +518,6 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'applications';
         value: string | Application;
-      } | null)
-    | ({
-        relationTo: 'test';
-        value: string | Test;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -909,16 +892,6 @@ export interface ApplicationsSelect<T extends boolean = true> {
         value?: T;
         id?: T;
       };
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "test_select".
- */
-export interface TestSelect<T extends boolean = true> {
-  title?: T;
-  titles?: T;
   updatedAt?: T;
   createdAt?: T;
 }

@@ -17,10 +17,10 @@ export default function IconHero({
         fill="none"
         className={`${s.icon} ${iconClass ? iconClass : ''}`}
       >
-        <g clip-path="url(#clip0_1034_6189)">
+        <g clipPath="url(#clip0_1034_6189)">
           <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M36.0361 3.2154L24.0241 0L12.012 3.2154L3.21863 12L0 24L3.21863 36L12.012 44.7846L24.0241 48L36.0361 44.7846L44.8296 36L48.0482 24L44.8296 12L36.0361 3.2154ZM35.0237 4.87356L23.9898 1.92L12.9559 4.87356L4.87846 12.9429L1.92193 23.9657L4.87846 34.9885L12.9559 43.0578L23.9898 46.0114L35.0237 43.0578L43.101 34.9885L46.0576 23.9657L43.101 12.9429L35.0237 4.87356Z"
             fill="#222222"
           />
