@@ -45,7 +45,7 @@ export default function LatestInsightsSection() {
             <div className={styles.insightCardMeta}>
               <div className={styles.insightCardMetaItem}>
                 <img
-                  src="/images/icons/revised card.svg"
+                  src="/images/icons/revised-card.svg"
                   alt="revised card"
                   style={{ width: '1vw', height: '1vw', marginRight: '0.3vw' }}
                 />
@@ -64,7 +64,7 @@ export default function LatestInsightsSection() {
             <div className={styles.insightCardExcerpt}>{post.excerpt}</div>
             <button className={styles.insightCardBtn}>
               <img
-                src="/images/icons/revised card.svg"
+                src="/images/icons/revised-card2.svg"
                 alt="revised card"
                 className={styles.readMoreIcon}
               />
@@ -75,7 +75,7 @@ export default function LatestInsightsSection() {
       </div>
       <button className={styles.latestInsightsCta}>
         <img
-          src="/images/icons/revised card.svg"
+          src="/images/icons/revised-card2.svg"
           alt="revised card"
           className={styles.readMoreIcon}
         />
