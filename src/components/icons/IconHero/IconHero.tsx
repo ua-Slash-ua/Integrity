@@ -8,7 +8,7 @@ export default function IconHero({
   iconClass?: string
 }) {
   return (
-    <div className={`${s.iconHero} ${containerClass ? containerClass : ''}`}>
+    <span className={`${s.iconHero} ${containerClass ? containerClass : ''}`}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="48"
@@ -42,6 +42,6 @@ export default function IconHero({
           </clipPath>
         </defs>
       </svg>
-    </div>
+    </span>
   )
 }

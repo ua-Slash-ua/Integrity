@@ -9,7 +9,12 @@ import { Pagination, Navigation } from 'swiper/modules'
 import { useState, useEffect } from 'react'
 import 'swiper/css'
 
-export default function ReviewsSection() {
+type ReviewsSection = {
+  subtitle: string
+  title: string
+}
+
+export default function ReviewsSection({ block }: { block: ReviewsSection }) {
   const [windowWidth, setWindowWidth] = useState<number>(
     typeof window !== 'undefined' ? window.innerWidth : 0,
   )
@@ -21,7 +26,6 @@ export default function ReviewsSection() {
 
     window.addEventListener('resize', handleResize)
 
-    // cleanup on unmount
     return () => {
       window.removeEventListener('resize', handleResize)
     }
@@ -39,8 +43,8 @@ export default function ReviewsSection() {
   return (
     <section className={s.section}>
       <div className={s.topBlock}>
-        <TabSection style="gray" text="reviews" />
-        <MainTitle title="What Our [[Clients Say]]" />
+        <TabSection style="gray" text={block.subtitle} />
+        <MainTitle title={block.title} />
       </div>
       <div className={s.content}>
         <div className={s.leftBlock}>
