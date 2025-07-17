@@ -1,14 +1,20 @@
-import styles from './IndustriesSection.module.css'
+'use client'
 
-export const IndustriesHeader = ({ casesCount }: { casesCount: number }) => (
+import MainTitle from '@/components/ui/MainTitle/MainTitle'
+import styles from './IndustriesSection.module.css'
+import TabSection from '@/components/ui/TabSection/TabSection'
+
+type IndustriesHeader = {
+  subtitle: string
+  title: string
+}
+
+export const IndustriesHeader = ({ block }: { block: IndustriesHeader }) => (
   <header className={styles.header}>
-    <span className={styles.expertise}>EXPERTISE</span>
-    <h2 className={styles.title}>
-      <span className={styles.industries}>INDUSTRIES</span>
-      <span className={styles.weKnowWell}>
-        WE KNOW WELL
-        <span className={styles.casesCount}>({casesCount})</span>
-      </span>
-    </h2>
+    <TabSection style="gray" text={block.subtitle} />
+    <div className={styles.wrapHeading}>
+      <MainTitle title={block.title} />
+      <div className={styles.count}>(5)</div>
+    </div>
   </header>
 )

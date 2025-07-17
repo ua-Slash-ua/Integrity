@@ -3,18 +3,13 @@ import styles from './ButtonItalic.module.css'
 type ButtonItalicProps = {
   content: string
   onChange: (newContent: string) => void
-  ids : {
-    id_st_container: string
-    id_preview_container: string
-    id_fulltext_container: string
-  }
 }
 
-export default function ButtonItalic({ content, onChange, ids }: ButtonItalicProps) {
+export default function ButtonItalic({ content, onChange }: ButtonItalicProps) {
   const handleGetSelection = () => {
     const selection = window.getSelection()
-    const previewContainer = document.getElementById(ids.id_preview_container)
-    const fullTextContainer = document.getElementById(ids.id_fulltext_container)
+    const previewContainer = document.getElementById('preview_container')
+    const fullTextContainer = document.getElementById('fulltext_container')
 
     if (!selection || selection.rangeCount === 0) return
 
@@ -26,7 +21,6 @@ export default function ButtonItalic({ content, onChange, ids }: ButtonItalicPro
 
     if (!(isInsidePreview || isInsideFullText) || !selectedText) return
 
-    // Перевіряємо, чи в <b>
     let parent = anchorNode?.parentElement
     let isItalic = false
     while (parent) {

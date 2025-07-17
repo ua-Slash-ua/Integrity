@@ -11,16 +11,18 @@ const FillForm = () => {
       <div className={styles.rowLayout}>
         {/* TalkToExpertBlock */}
         <div className={styles.expertBlock}>
-          <div className={styles.expertAvatarWrapper}>
-            <img src="/images/icons/frame.png" alt="Avatar" className={styles.expertAvatar} />
-            <img src="/images/icons/chat.svg" alt="Chat" className={styles.expertChatIcon} />
-          </div>
-          <div className={styles.expertTitle}>
-            <span className={styles.expertTitleLine}>TALK TO</span>
-            <span className={styles.expertTitleLine}>AN EXPERT</span>
-          </div>
-          <div className={styles.expertSubtitle}>
-            Order your first free call and receive a tailored strategy to promote your business
+          <div className={styles.expertCard}>
+            <div className={styles.expertAvatarWrapper}>
+              <img src="/images/icons/frame.png" alt="Avatar" className={styles.expertAvatar} />
+              <img src="/images/icons/chat.svg" alt="Chat" className={styles.expertChatIcon} />
+            </div>
+            <div className={styles.expertTitle}>
+              <span className={styles.expertTitleLine}>TALK TO</span>
+              <span className={styles.expertTitleLine}>AN EXPERT</span>
+            </div>
+            <div className={styles.expertSubtitle}>
+              Order your first free call and receive a tailored strategy to promote your business
+            </div>
           </div>
         </div>
         {/* FillForm */}
@@ -64,8 +66,8 @@ const FillForm = () => {
             </label>
           </div>
           <button type="submit" className={styles.submitBtn}>
-            <img src="/images/icons/chat.svg" alt="Chat" className={styles.btnIcon} />
-            Order a call
+            <img src="/images/icons/message.svg" alt="Chat" className={styles.btnIcon} />
+            <p className={styles.order}>Order a call</p>
           </button>
         </form>
       </div>
