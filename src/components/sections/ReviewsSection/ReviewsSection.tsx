@@ -27,8 +27,14 @@ export default function ReviewsSection() {
     }
   }, [window.innerWidth])
 
+  const slidesCount = 4
+  const slideWidth = windowWidth * 0.4875
+
   const calcSlidesOffset = () => {
-    return 0.7 * (windowWidth * 0.4875)
+    const totalSlidesWidth = slidesCount * slideWidth + (slidesCount - 1) * 20
+    const visibleArea = windowWidth
+    const offsetNeeded = totalSlidesWidth > visibleArea
+    return offsetNeeded ? 0.7 * slideWidth : 0
   }
   return (
     <section className={s.section}>
@@ -52,15 +58,14 @@ export default function ReviewsSection() {
           <Swiper
             modules={[Navigation, Pagination]}
             className={s.swiper}
-            slidesPerView={1.4}
+            slidesPerView="auto"
+            centeredSlides={false}
             spaceBetween={20}
-            slidesOffsetAfter={calcSlidesOffset()}
             pagination={{
               el: `.${s.paginationCont}`,
               bulletClass: s.paginationBullet,
               bulletActiveClass: s.paginationBulletActive,
             }}
-            centeredSlides={false}
             navigation={{
               nextEl: `.${s.navigationNext}`,
               prevEl: `.${s.navigationPrev}`,
@@ -191,11 +196,9 @@ export default function ReviewsSection() {
             </SwiperSlide>
           </Swiper>
           <div className={s.controls}>
+            <button className={`${s.navigationBtn} ${s.navigationPrev}`}>{navArrow}</button>
             <div className={s.paginationCont}></div>
-            <div className={s.navigationCont}>
-              <button className={`${s.navigationBtn} ${s.navigationPrev}`}>{navArrow}</button>
-              <button className={`${s.navigationBtn} ${s.navigationNext}`}>{navArrow}</button>
-            </div>
+            <button className={`${s.navigationBtn} ${s.navigationNext}`}>{navArrow}</button>
           </div>
         </div>
       </div>

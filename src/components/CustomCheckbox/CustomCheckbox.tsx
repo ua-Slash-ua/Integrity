@@ -13,7 +13,7 @@ export default function CustomCheckbox({
   name: keyof FormValues
   value: string
 }) {
-  const { values, setFieldValue } = useFormikContext<FormValues>()
+  const { values, setFieldValue, setFieldTouched } = useFormikContext<FormValues>()
   const isActive = values[name] === value
   const toggleValue = () => {
     if (isActive) {
@@ -27,6 +27,7 @@ export default function CustomCheckbox({
       type="button"
       className={`${s.checkboxLabel} ${isActive ? s.active : ''}`}
       onClick={toggleValue}
+      onBlur={() => setFieldTouched(name, true)}
     >
       {isActive ? checkboxChecked : checkboxEmpty}
       <span className={s.labelText}>{label}</span>

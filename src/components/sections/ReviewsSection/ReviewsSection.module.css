@@ -232,9 +232,15 @@
 
       .controls {
         width: max-content;
+        padding: 0.42vw;
+        display: flex;
+        gap: 1.67vw;
+        align-items: center;
+        background-color: rgba(249, 249, 249, 1);
+        border-radius: 0.83vw;
 
         .paginationCont {
-          margin-bottom: 2.08vw;
+          width: max-content;
           display: flex;
           justify-content: center;
           gap: 0.83vw;
@@ -242,44 +248,36 @@
           .paginationBullet {
             width: 0.31vw;
             height: 0.31vw;
-            border-radius: 50%;
+            border-radius: 1.88vw;
             background-color: rgba(228, 228, 228, 1);
           }
 
           .paginationBulletActive {
+            width: 1.88vw;
             background-color: #000000;
           }
         }
 
-        .navigationCont {
-          width: max-content;
-          padding: 0.42vw;
+        .navigationBtn {
+          width: 8.54vw;
+          height: 2.92vw;
           display: flex;
-          gap: 0.42vw;
+          justify-content: center;
+          align-items: center;
           border-radius: 0.83vw;
-          background-color: rgba(249, 249, 249, 1);
+          background-color: #ffffff;
+        }
 
-          .navigationBtn {
-            width: 14.37vw;
-            height: 2.92vw;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 0.83vw;
-            background-color: #ffffff;
-          }
+        .navigationPrev {
+        }
 
-          .navigationPrev {
-          }
+        .navigationNext {
+          transform: rotateZ(180deg);
+        }
 
-          .navigationNext {
-            transform: rotateZ(180deg);
-          }
-
-          .disabled {
-            .navArrow {
-              fill-opacity: 0.6;
-            }
+        .disabled {
+          .navArrow {
+            fill-opacity: 0.6;
           }
         }
       }

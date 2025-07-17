@@ -1,5 +1,5 @@
 'use client'
-import { Formik, Form, Field } from 'formik'
+import { Formik, Form, Field, ErrorMessage } from 'formik'
 import s from './FormSection.module.css'
 import NumberInput from '@/components/NumberInput/NumberInput'
 import CountrySelector from '@/components/CountryInput/CountryInput'
@@ -17,14 +17,14 @@ const industries = [
 ]
 
 const validationSchema = object({
-  name: string().required("Введіть ім'я"),
-  email: string().email().required(),
-  number: string().required(),
-  country: string().required(),
-  employees: string().required(),
-  position: string().required(),
-  industry: string().required(),
-  stage: string().required(),
+  name: string().required('Enter your name'),
+  email: string().email().required('Enter your email'),
+  number: string().required('Enter your phone number'),
+  country: string().required('Enter your country'),
+  employees: string().required('Enter number of employees'),
+  position: string().required('Enter your position'),
+  industry: string().required('Enter your industry'),
+  stage: string().required('Enter your company stage'),
   website: string(),
   message: string(),
 })
@@ -90,29 +90,41 @@ export default function FormSection() {
                       className={`${s.input}`}
                       placeholder="Enter your name"
                     />
+                    <ErrorMessage name="name">
+                      {(msg) => <div className={s.errorMessage}>{msg}</div>}
+                    </ErrorMessage>
                   </label>
                   <label htmlFor="forEmail">
-                    <p>Email</p>
+                    <p className={s.required}>Email</p>
                     <Field
                       name="email"
                       id="forEmail"
                       className={`${s.input}`}
                       placeholder="Enter your email"
                     />
+                    <ErrorMessage name="email">
+                      {(msg) => <div className={s.errorMessage}>{msg}</div>}
+                    </ErrorMessage>
                   </label>
                   <label htmlFor="forNumber">
-                    <p>Number</p>
+                    <p className={s.required}>Number</p>
                     <NumberInput
                       name="number"
                       id="forNumber"
                       className={`${s.input} ${s.numberInput}`}
                     />
+                    <ErrorMessage name="number">
+                      {(msg) => <div className={s.errorMessage}>{msg}</div>}
+                    </ErrorMessage>
                   </label>
                 </div>
                 <div className={s.inputLine}>
                   <label htmlFor="forCountry">
                     <p className={s.required}>Country</p>
                     <CountrySelector />
+                    <ErrorMessage name="country">
+                      {(msg) => <div className={s.errorMessage}>{msg}</div>}
+                    </ErrorMessage>
                   </label>
                   <label htmlFor="forEmployees">
                     <p className={s.required}>Number of employees</p>
@@ -123,11 +135,14 @@ export default function FormSection() {
                       placeholder="12"
                       className={`${s.input}`}
                     />
+                    <ErrorMessage name="employees">
+                      {(msg) => <div className={s.errorMessage}>{msg}</div>}
+                    </ErrorMessage>
                   </label>
                 </div>
                 <div className={s.inputLine}>
                   <label htmlFor="forPosition">
-                    <p>Your position in the company</p>
+                    <p className={s.required}>Your position in the company</p>
                     <Field
                       type="text"
                       name="position"
@@ -135,10 +150,13 @@ export default function FormSection() {
                       className={`${s.input}`}
                       placeholder="Your position"
                     />
+                    <ErrorMessage name="position">
+                      {(msg) => <div className={s.errorMessage}>{msg}</div>}
+                    </ErrorMessage>
                   </label>
                 </div>
                 <div className={s.checkboxLineCont}>
-                  <p>Choose your industry</p>
+                  <p className={s.required}>Choose your industry</p>
                   <div className={`${s.inputLine} ${s.checkboxLine}`}>
                     {industries.map((item, idx) => {
                       return (
@@ -151,9 +169,12 @@ export default function FormSection() {
                       )
                     })}
                   </div>
+                  <ErrorMessage name="industry">
+                    {(msg) => <div className={s.errorMessage}>{msg}</div>}
+                  </ErrorMessage>
                 </div>
                 <div className={s.checkboxLineCont}>
-                  <p>Company stage</p>
+                  <p className={s.required}>Company stage</p>
                   <div className={s.inputLine}>
                     <div className={`${s.inputLine} ${s.stagesLine}`}>
                       {stages.map((item, idx) => {
@@ -168,6 +189,9 @@ export default function FormSection() {
                       })}
                     </div>
                   </div>
+                  <ErrorMessage name="stage">
+                    {(msg) => <div className={s.errorMessage}>{msg}</div>}
+                  </ErrorMessage>
                 </div>
                 <div className={s.inputLine}>
                   <label htmlFor="forWebsite">
