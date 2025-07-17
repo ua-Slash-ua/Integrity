@@ -13,7 +13,7 @@
 }
 
 
-.tabSection h2 {
+.tabSection span {
   text-align: center;
   font-family: 'Inter Tight';
   font-size: 0.7vw;
@@ -22,7 +22,6 @@
   line-height: 140%;
   letter-spacing: 0.09vw;
   text-transform: uppercase;
-
 }
 
 .tabSection.gray {
@@ -32,5 +31,9 @@
 
 .tabSection.dark {
   color: #ffffff;
-  background-color: #222222;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.tabSection.white {
+  color: #222;
+  background-color: #fff;
 }

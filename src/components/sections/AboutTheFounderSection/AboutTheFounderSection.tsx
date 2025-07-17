@@ -3,11 +3,17 @@ import TabSection from '@/components/ui/TabSection/TabSection'
 import s from './AboutTheFounderSection.module.css'
 import Image from 'next/image'
 import IconHero from '@/components/icons/IconHero/IconHero'
-const AboutTheFounderSection = () => {
+
+type AboutTheFounderSection = {
+  subtitle: string
+  title: string
+}
+
+const AboutTheFounderSection = ({ block }: { block: AboutTheFounderSection }) => {
   return (
     <section className={s.section}>
-      <TabSection style="gray" text="about the founder" />
-      <MainTitle title="the mind > [[behind the mission]]" />
+      <TabSection style="gray" text={block.subtitle} />
+      <MainTitle title={block.title} />
       <div className={s.contentContainer}>
         <div className={s.imgContainer}>
           <Image

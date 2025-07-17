@@ -46,17 +46,18 @@ const tariffs = [
     ],
   },
 ]
-export default function TariffsSection() {
+
+type TariffsSection = {
+  subtitle: string
+  title: string
+}
+
+export default function TariffsSection({ block }: { block: TariffsSection }) {
   return (
     <section className={s.section}>
       <div className={s.topBlock}>
-        <div className={s.upperDescr}>
-          <p>tariffs</p>
-        </div>
-        <h2>
-          Flexible Plans <br />
-          <span> for Every Business</span>
-        </h2>
+        <TabSection style="dark" text={block.subtitle} />
+        <MainTitle title={block.title} />
       </div>
       <div className={s.tariffsList}>
         {tariffs.map((item, idx) => {

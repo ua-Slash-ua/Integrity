@@ -30,7 +30,13 @@ const advantages = [
     post_title: 'Straight answers from the people responsible',
   },
 ]
-export default function ApproachSection() {
+
+type ApproachSection = {
+  subtitle: string
+  title: string
+}
+
+export default function ApproachSection({ block }: { block: ApproachSection }) {
   const iconMap: Record<string, JSX.Element> = {
     star,
     precision,
@@ -42,8 +48,8 @@ export default function ApproachSection() {
     <section className={s.section}>
       <div className={s.container}>
         <div className={s.topBlock}>
-          <p className={s.upperDescr}>our team</p>
-          <MainTitle title="our [[approach]]" />
+          <p className={s.upperDescr}>{block.subtitle}</p>
+          <MainTitle title={block.title} />
         </div>
 
         <div className={s.sloganCont}>

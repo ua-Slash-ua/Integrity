@@ -5,34 +5,57 @@ import MainTitle from '@/components/ui/MainTitle/MainTitle'
 import s from './FaqSection.module.css'
 import { Accordion, AccordionItem } from '@szhsin/react-accordion'
 
-export default function FaqSection() {
+type FaqSection = {
+  title: string
+  subtitle: string
+}
+
+type Faqs = {
+  docs: {
+    id: string
+    question: string
+    answer: string
+  }[]
+}
+
+export default async function FaqSection({
+  block,
+  locale,
+  faqs,
+}: {
+  block: FaqSection
+  locale: string
+  faqs: Faqs
+}) {
   return (
     <section className={s.section}>
       <div className={s.topBlock}>
-        <TabSection text={'faq'} style="gray" />
-        <MainTitle title={'Let’s make > [[things clear]]'} />
+        <TabSection text={block.subtitle} style="white" />
+        <MainTitle title={block.title} />
       </div>
       <div className={s.accordionCont}>
-        <Accordion className={s.accordion}>
-          <AccordionItem
-            className={s.accordionItem}
-            header={
-              <div className={s.itemHeader}>
-                <p className={s.question}>What is Lorem Ipsum?</p>
-                <button>
-                  <span>{accordionArrow}</span>
-                </button>
-              </div>
-            }
-            buttonProps={{
-              className: ({ isEnter }) => `${s.itemBtn} ${isEnter && s.itemBtnExpanded}`,
-            }}
-            contentProps={{ className: s.itemContent }}
-            panelProps={{ className: s.itemPanel }}
-          >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet, enim!
-          </AccordionItem>
-        </Accordion>
+        {faqs.docs.map((faq) => (
+          <Accordion className={s.accordion} key={faq.id}>
+            <AccordionItem
+              className={s.accordionItem}
+              header={
+                <div className={s.itemHeader}>
+                  <p className={s.question}>{faq.question}</p>
+                  <button>
+                    <span>{accordionArrow}</span>
+                  </button>
+                </div>
+              }
+              buttonProps={{
+                className: ({ isEnter }) => `${s.itemBtn} ${isEnter && s.itemBtnExpanded}`,
+              }}
+              contentProps={{ className: s.itemContent }}
+              panelProps={{ className: s.itemPanel }}
+            >
+              <div dangerouslySetInnerHTML={{ __html: faq.answer }} />
+            </AccordionItem>
+          </Accordion>
+        ))}
       </div>
     </section>
   )
