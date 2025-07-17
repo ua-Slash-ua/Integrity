@@ -94,6 +94,35 @@
       background-color: #ffffff;
       border-radius: 1.67vw;
 
+      label {
+        position: relative;
+      }
+
+      .errorMessage {
+        position: absolute;
+        left: 0;
+        bottom: -0.1vw;
+
+        font-size: 0.83vw;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 1.2;
+        color: red;
+      }
+
+      .required {
+        width: max-content;
+        position: relative;
+      }
+
+      .required::after {
+        content: '*';
+        position: absolute;
+        top: 0;
+        right: -0.5vw;
+        color: rgba(255, 228, 20, 1);
+      }
+
       .checkboxLine {
         overflow-x: scroll;
       }
@@ -103,6 +132,7 @@
       }
 
       .checkboxLineCont {
+        position: relative;
         margin-bottom: 1.04vw;
         p {
           margin-bottom: 0.63vw;
@@ -111,6 +141,18 @@
           font-weight: 800;
           line-height: 1;
           color: rgba(34, 34, 34, 1);
+        }
+
+        .errorMessage {
+          position: absolute;
+          left: 0;
+          bottom: -0.7vw;
+
+          font-size: 0.83vw;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 1.2;
+          color: red;
         }
       }
 

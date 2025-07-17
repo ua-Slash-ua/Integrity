@@ -7,7 +7,7 @@ import countryList from 'react-select-country-list'
 
 function CountrySelector() {
   const options = useMemo(() => countryList().getData(), [])
-  const { setFieldValue } = useFormikContext()
+  const { setFieldValue, setFieldTouched, touched } = useFormikContext()
 
   const changeHandler = (value: string) => {
     setFieldValue('country', value)
@@ -17,6 +17,7 @@ function CountrySelector() {
     <Select
       className={s.input}
       options={options}
+      onBlur={() => setFieldTouched('country', true)}
       onChange={(value) => {
         if (value) {
           changeHandler(value.label)
