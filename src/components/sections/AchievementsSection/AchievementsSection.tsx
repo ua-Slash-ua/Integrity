@@ -21,7 +21,13 @@ type AchievementsBlock = {
   }[]
 }
 
-export default function AchievementsSection({ block }: { block: AchievementsBlock }) {
+export default function AchievementsSection({
+  block,
+  locale,
+}: {
+  block: AchievementsBlock
+  locale: string
+}) {
   const t = useTranslations('HomePage')
   return (
     <div className={s.section}>

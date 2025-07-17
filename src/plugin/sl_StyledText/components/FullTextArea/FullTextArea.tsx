@@ -4,11 +4,10 @@ import styles from './FullTextArea.module.css'
 type FullTextAreaProps = {
   content: string
   onChange: (content: any) => void
-  id: string
 }
-export default function FullTextArea({ content, onChange, id }: FullTextAreaProps) {
+export default function FullTextArea({ content, onChange }: FullTextAreaProps) {
   return (
-    <div className={styles.fulltext_container} id={id} style={{ display: 'none'}}>
+    <div className={styles.fulltext_container} id="fulltext_container" style={{ display: 'none'}}>
       <textarea
         className={styles.fulltext_textarea}
         cols={60}

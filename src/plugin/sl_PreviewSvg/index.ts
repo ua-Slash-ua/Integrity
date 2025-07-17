@@ -1,1 +1,0 @@
-export const PreviewSvg = '@/plugin/sl_PreviewSvg/PreviewField'
